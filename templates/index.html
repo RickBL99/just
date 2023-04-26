@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/png" href="/static/favicon.ico" />
+	<title>JustTheMeta</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		body {
+		  font-family: 'Lato', sans-serif;
+		}
+
+		div.content {
+		  border: 1px solid #ddd;
+		  padding: 10px;
+		  margin: 10px;
+		}
+
+		table {
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		td, th {
+		  border: 1px solid #dddddd;
+		  text-align: left;
+		  padding: 8px;
+		}
+
+		tr:nth-child(even) {
+		  background-color: #f2f2f2;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<h2>THIS IS... JUST THE META</h2>
+		<h4>Viewing exif data for file: {{ filename }}</h4>
+		<br>
+		<i>This will show you XMP, JFIF, ICC, IPTC, EXIF, and Composite data if it exists.  That's all it does. :)</i>
+		<br>
+		<br>
+		<a href="/api/upload" class="btn btn-primary">Back to File Drop</a>
+		<br>
+		<br>
+
+		{% if table_html %}
+			{{ table_html | safe }}
+		{% else %}
+			<p>No exif data found</p>
+		{% endif %}
+		<br>
+		
+	</div>
+	<iframe src="https://giphy.com/embed/Y6AOEbX5WtDNK" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/happy-dog-dirty-Y6AOEbX5WtDNK">via GIPHY</a></p> 
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+

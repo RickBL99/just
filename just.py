@@ -20,7 +20,7 @@ if platform.system() == "Darwin":
     print("ITS A MAC!")
 else:
     # Ubuntu (or other Linux distros) go to this path.
-    upload_dir = "/home/uploaded_files"
+    upload_dir = "/uploaded_files"
     static_dir = "static"
     downloads_dir = "downloads"
     print("ITS NOT A MAC!")

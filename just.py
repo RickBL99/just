@@ -4,10 +4,11 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import subprocess
 import json
+import os
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
-static_dir = "static"
+static_dir = os.path.abspath("static")
 app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 

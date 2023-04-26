@@ -7,9 +7,21 @@ import json
 import os
 import platform
 
-app = FastAPI()
+
+
+api = FastAPI()
 templates = Jinja2Templates(directory="templates")
 current_dir = os.getcwd()
+
+
+# GET ALL API >PY FILES
+
+from api import upload
+
+api.include_router(upload.router)
+
+
+# CHECK PATH SYSTEM
 
 
 if platform.system() == "Darwin":
@@ -34,13 +46,14 @@ print()
 print(downloads_dir)
 
 
-app.mount("/static", StaticFiles(directory=static_dir), name="static")
-app.mount("/uploaded_files", StaticFiles(directory=upload_dir), name="uploaded_files")
+api.mount("/static", StaticFiles(directory=static_dir), name="static")
+api.mount("/uploaded_files", StaticFiles(directory=upload_dir), name="uploaded_files")
 
 
+# APPLICATION API
 
 
-@app.get("/")
+@api.get("/")
 def form_post(request: Request):
     result = "Get Files To Upload"
     print(result)
@@ -48,7 +61,7 @@ def form_post(request: Request):
 
 
 
-@app.get("/result", response_class=HTMLResponse)
+@api.get("/result", response_class=HTMLResponse)
 async def index(request: Request):
     filename = "test.jpg"
     
@@ -69,5 +82,5 @@ async def index(request: Request):
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(api, host="127.0.0.1", port=8000)
 

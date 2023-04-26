@@ -59,19 +59,18 @@
         <div class="col-md-6">
           <div id="drop-area" class="border border-secondary p-5">
             <p class="text-center mb-0">Drag and drop up to 30 images or <b>click</b> to select a file(s). Uploading will begin within 10 seconds.</p>
+              <!-- <p class="text-center mb-0">Coming soon.</p> -->
             
             <input type="file" id="file-input" class="d-none" multiple>
           </div>
-<!--           <div class="text-center mt-3">
+          <div class="text-center mt-3">
             <p id="status"></p>
 
-       <button type="button" id="view-uploaded-files-button" class="btn btn-block btn-primary mt-3" onclick="submitForm('/api/get_upload_list')">Check / Delete Uploaded File(s)</button>
+       <!-- <button type="button" id="view-uploaded-files-button" class="btn btn-block btn-primary mt-3" onclick="submitForm('/api/get_upload_list')">Check / Delete Uploaded File(s)</button> -->
 
-      <button type="button" id="get-meta-button" class="btn btn-block btn-primary mt-3" onclick="submitForm('/api/getmetalist')">See / Edit Metadata Information</button>
-      <button type="button" id="leave-note-button" class="btn btn-block btn-primary mt-3" data-toggle="modal" data-target="#note-modal">Leave Note For Creative Team</button>
+      <button type="button" id="get-meta-button" class="btn btn-block btn-primary mt-3" onclick="submitForm('/api/getmetalist')">Show Me The Meta</button>
+<!--       <button type="button" id="leave-note-button" class="btn btn-block btn-primary mt-3" data-toggle="modal" data-target="#note-modal">Leave Note For Creative Team</button>
  <button type="button" id="finalize_submission" class="btn btn-block btn-success mt-3" data-toggle="modal" onclick="finalizeSubmission()">Finalize Submission</button> -->
-
-      <a href="/api/homepage" class="btn btn-block btn-primary mt-3">See The Data</a>
 
 
 
@@ -219,9 +218,9 @@ function handleFiles(files) {
       return;
     }
     // Warn for file types other than .jpg, .jpeg, .mov, .mp4, .xls, and .xlsx
-    if (files[i].type !== "image/jpeg" && files[i].type !== "image/jpg" && files[i].type !== "video/quicktime" && files[i].type !== "application/postscript" && files[i].type !== "image/x-eps" && files[i].type !== "video/mp4" && files[i].type !== "application/vnd.ms-excel" && files[i].type !== "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
+    if (files[i].type !== "image/jpeg" && files[i].type !== "image/jpg" && files[i].type !== "image/png" && files[i].type !== "image/tiff" && files[i].type !== "image/gif" && files[i].type !== "image/bmp" && files[i].type !== "image/vnd.adobe.photoshop" && files[i].type !== "image/x-raw" && files[i].type !== "image/x-dng" && files[i].type !== "image/x-canon-cr2" && files[i].type !== "image/x-nikon-nef" && files[i].type !== "image/x-sony-sr2" && files[i].type !== "video/quicktime" && files[i].type !== "video/mp4" && files[i].type !== "application/vnd.ms-excel" && files[i].type !== "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet") {
       if (!unsupportedTypeAlertShown) {
-        alert("Warning: Only .jpg, .jpeg, .mov, .mp4, .xls .eps and .xlsx files are currently supported.");
+        alert("Warning: Only .jpg, .jpeg, .png, .tiff, .gif, .bmp, .psd, .raw, .dng, .cr2, .nef, .sr2, .mov, .mp4, .xls .eps and .xlsx files are currently supported.");
         unsupportedTypeAlertShown = true; // Set flag to true to indicate that the alert has been displayed
       }
       hasUnsupportedFiles = true; // Set flag to true to indicate that there are unsupported files
@@ -266,6 +265,7 @@ function handleFiles(files) {
     }
   }
 }
+
 
 function resetUploadForm() {
   document.getElementById("status").textContent = "";

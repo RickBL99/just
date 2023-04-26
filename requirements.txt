@@ -27,3 +27,4 @@ iptcinfo3
 python-xmp-toolkit
 piexif
 exifread
+python-multipart

@@ -1,0 +1,189 @@
+2023-04-26 11:10:51,306 ERROR Form data requires "python-multipart" to be installed. 
+You can install "python-multipart" with: 
+
+pip install python-multipart
+
+2023-04-26 11:11:38,657 DEBUG Using selector: KqueueSelector
+2023-04-26 11:12:28,534 DEBUG Calling on_part_begin with no data
+2023-04-26 11:12:28,535 DEBUG Calling on_header_field with data[42:61]
+2023-04-26 11:12:28,535 DEBUG Calling on_header_value with data[63:122]
+2023-04-26 11:12:28,535 DEBUG Calling on_header_end with no data
+2023-04-26 11:12:28,535 DEBUG Calling on_header_field with data[124:136]
+2023-04-26 11:12:28,535 DEBUG Calling on_header_value with data[138:148]
+2023-04-26 11:12:28,535 DEBUG Calling on_header_end with no data
+2023-04-26 11:12:28,535 DEBUG Calling on_headers_finished with no data
+2023-04-26 11:12:28,562 DEBUG Calling on_part_data with data[0:59880]
+2023-04-26 11:12:28,562 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:12:28,563 DEBUG Calling on_part_data with data[59881:106056]
+2023-04-26 11:12:28,563 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:12:28,563 DEBUG Calling on_part_data with data[106057:122446]
+2023-04-26 11:12:28,563 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:12:28,563 DEBUG Calling on_part_data with data[122447:156636]
+2023-04-26 11:12:28,564 DEBUG Calling on_part_end with no data
+2023-04-26 11:12:28,564 DEBUG Calling on_part_begin with no data
+2023-04-26 11:12:28,564 DEBUG Calling on_header_field with data[44:63]
+2023-04-26 11:12:28,564 DEBUG Calling on_header_value with data[65:124]
+2023-04-26 11:12:28,564 DEBUG Calling on_header_end with no data
+2023-04-26 11:12:28,564 DEBUG Calling on_header_field with data[126:138]
+2023-04-26 11:12:28,565 DEBUG Calling on_header_value with data[140:150]
+2023-04-26 11:12:28,565 DEBUG Calling on_header_end with no data
+2023-04-26 11:12:28,565 DEBUG Calling on_headers_finished with no data
+2023-04-26 11:12:28,565 DEBUG Calling on_part_data with data[154:60034]
+2023-04-26 11:12:28,565 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:12:28,566 DEBUG Calling on_part_data with data[60035:106210]
+2023-04-26 11:12:28,566 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:12:28,566 DEBUG Calling on_part_data with data[106211:122600]
+2023-04-26 11:12:28,566 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:12:28,566 DEBUG Calling on_part_data with data[122601:156790]
+2023-04-26 11:12:28,566 DEBUG Calling on_part_end with no data
+2023-04-26 11:12:28,566 DEBUG Calling on_part_begin with no data
+2023-04-26 11:12:28,566 DEBUG Calling on_header_field with data[156834:156853]
+2023-04-26 11:12:28,566 DEBUG Calling on_header_value with data[156855:156914]
+2023-04-26 11:12:28,566 DEBUG Calling on_header_end with no data
+2023-04-26 11:12:28,566 DEBUG Calling on_header_field with data[156916:156928]
+2023-04-26 11:12:28,566 DEBUG Calling on_header_value with data[156930:156940]
+2023-04-26 11:12:28,566 DEBUG Calling on_header_end with no data
+2023-04-26 11:12:28,566 DEBUG Calling on_headers_finished with no data
+2023-04-26 11:12:28,567 DEBUG Calling on_part_data with data[0:59880]
+2023-04-26 11:12:28,568 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:12:28,568 DEBUG Calling on_part_data with data[59881:106056]
+2023-04-26 11:12:28,568 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:12:28,568 DEBUG Calling on_part_data with data[106057:122446]
+2023-04-26 11:12:28,568 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:12:28,568 DEBUG Calling on_part_data with data[122447:156636]
+2023-04-26 11:12:28,568 DEBUG Calling on_part_end with no data
+2023-04-26 11:12:28,568 DEBUG Calling on_end with no data
+2023-04-26 11:12:28,583 DEBUG Upload request received from user None
+2023-04-26 11:12:28,583 DEBUG Operating system: macOS
+2023-04-26 11:12:28,583 DEBUG File uploaded: 442-22004382 copy 2.jpg
+2023-04-26 11:14:26,109 DEBUG Using selector: KqueueSelector
+2023-04-26 11:14:34,811 DEBUG Calling on_part_begin with no data
+2023-04-26 11:14:34,811 DEBUG Calling on_header_field with data[42:61]
+2023-04-26 11:14:34,811 DEBUG Calling on_header_value with data[63:122]
+2023-04-26 11:14:34,811 DEBUG Calling on_header_end with no data
+2023-04-26 11:14:34,811 DEBUG Calling on_header_field with data[124:136]
+2023-04-26 11:14:34,811 DEBUG Calling on_header_value with data[138:148]
+2023-04-26 11:14:34,811 DEBUG Calling on_header_end with no data
+2023-04-26 11:14:34,811 DEBUG Calling on_headers_finished with no data
+2023-04-26 11:14:34,836 DEBUG Calling on_part_data with data[0:62345]
+2023-04-26 11:14:34,836 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,836 DEBUG Calling on_part_data with data[62346:66177]
+2023-04-26 11:14:34,836 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,837 DEBUG Calling on_part_data with data[66178:133706]
+2023-04-26 11:14:34,837 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,837 DEBUG Calling on_part_data with data[133707:156636]
+2023-04-26 11:14:34,838 DEBUG Calling on_part_end with no data
+2023-04-26 11:14:34,838 DEBUG Calling on_part_begin with no data
+2023-04-26 11:14:34,838 DEBUG Calling on_header_field with data[44:63]
+2023-04-26 11:14:34,838 DEBUG Calling on_header_value with data[65:124]
+2023-04-26 11:14:34,838 DEBUG Calling on_header_end with no data
+2023-04-26 11:14:34,838 DEBUG Calling on_header_field with data[126:138]
+2023-04-26 11:14:34,838 DEBUG Calling on_header_value with data[140:150]
+2023-04-26 11:14:34,838 DEBUG Calling on_header_end with no data
+2023-04-26 11:14:34,838 DEBUG Calling on_headers_finished with no data
+2023-04-26 11:14:34,839 DEBUG Calling on_part_data with data[154:62499]
+2023-04-26 11:14:34,839 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,839 DEBUG Calling on_part_data with data[62500:66331]
+2023-04-26 11:14:34,839 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,839 DEBUG Calling on_part_data with data[66332:133860]
+2023-04-26 11:14:34,840 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,840 DEBUG Calling on_part_data with data[133861:156790]
+2023-04-26 11:14:34,840 DEBUG Calling on_part_end with no data
+2023-04-26 11:14:34,840 DEBUG Calling on_part_begin with no data
+2023-04-26 11:14:34,840 DEBUG Calling on_header_field with data[156834:156853]
+2023-04-26 11:14:34,840 DEBUG Calling on_header_value with data[156855:156914]
+2023-04-26 11:14:34,840 DEBUG Calling on_header_end with no data
+2023-04-26 11:14:34,840 DEBUG Calling on_header_field with data[156916:156928]
+2023-04-26 11:14:34,840 DEBUG Calling on_header_value with data[156930:156940]
+2023-04-26 11:14:34,840 DEBUG Calling on_header_end with no data
+2023-04-26 11:14:34,840 DEBUG Calling on_headers_finished with no data
+2023-04-26 11:14:34,843 DEBUG Calling on_part_data with data[0:62345]
+2023-04-26 11:14:34,843 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,843 DEBUG Calling on_part_data with data[62346:66177]
+2023-04-26 11:14:34,843 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,843 DEBUG Calling on_part_data with data[66178:133706]
+2023-04-26 11:14:34,843 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,843 DEBUG Calling on_part_data with data[133707:156636]
+2023-04-26 11:14:34,844 DEBUG Calling on_part_end with no data
+2023-04-26 11:14:34,844 DEBUG Calling on_part_begin with no data
+2023-04-26 11:14:34,844 DEBUG Calling on_header_field with data[156680:156699]
+2023-04-26 11:14:34,844 DEBUG Calling on_header_value with data[156701:156760]
+2023-04-26 11:14:34,844 DEBUG Calling on_header_end with no data
+2023-04-26 11:14:34,844 DEBUG Calling on_header_field with data[156762:156774]
+2023-04-26 11:14:34,844 DEBUG Calling on_header_value with data[156776:156786]
+2023-04-26 11:14:34,844 DEBUG Calling on_header_end with no data
+2023-04-26 11:14:34,844 DEBUG Calling on_headers_finished with no data
+2023-04-26 11:14:34,844 DEBUG Calling on_part_data with data[156790:219135]
+2023-04-26 11:14:34,844 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,844 DEBUG Calling on_part_data with data[219136:222967]
+2023-04-26 11:14:34,844 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,845 DEBUG Calling on_part_data with data[222968:262144]
+2023-04-26 11:14:34,845 DEBUG Calling on_part_data with data[0:28352]
+2023-04-26 11:14:34,845 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:14:34,846 DEBUG Calling on_part_data with data[28353:51282]
+2023-04-26 11:14:34,846 DEBUG Calling on_part_end with no data
+2023-04-26 11:14:34,846 DEBUG Calling on_end with no data
+2023-04-26 11:14:34,846 DEBUG Upload request received from user None
+2023-04-26 11:14:34,846 DEBUG Operating system: macOS
+2023-04-26 11:14:34,847 DEBUG File uploaded: 442-22004382 copy 2.jpg
+2023-04-26 11:15:00,447 DEBUG Using selector: KqueueSelector
+2023-04-26 11:17:04,533 DEBUG Calling on_part_begin with no data
+2023-04-26 11:17:04,535 DEBUG Calling on_header_field with data[42:61]
+2023-04-26 11:17:04,535 DEBUG Calling on_header_value with data[63:122]
+2023-04-26 11:17:04,535 DEBUG Calling on_header_end with no data
+2023-04-26 11:17:04,535 DEBUG Calling on_header_field with data[124:136]
+2023-04-26 11:17:04,535 DEBUG Calling on_header_value with data[138:148]
+2023-04-26 11:17:04,535 DEBUG Calling on_header_end with no data
+2023-04-26 11:17:04,535 DEBUG Calling on_headers_finished with no data
+2023-04-26 11:17:04,556 DEBUG Calling on_part_data with data[0:30641]
+2023-04-26 11:17:04,556 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:17:04,557 DEBUG Calling on_part_data with data[30642:156636]
+2023-04-26 11:17:04,558 DEBUG Calling on_part_end with no data
+2023-04-26 11:17:04,558 DEBUG Calling on_part_begin with no data
+2023-04-26 11:17:04,559 DEBUG Calling on_header_field with data[44:63]
+2023-04-26 11:17:04,559 DEBUG Calling on_header_value with data[65:124]
+2023-04-26 11:17:04,559 DEBUG Calling on_header_end with no data
+2023-04-26 11:17:04,559 DEBUG Calling on_header_field with data[126:138]
+2023-04-26 11:17:04,559 DEBUG Calling on_header_value with data[140:150]
+2023-04-26 11:17:04,559 DEBUG Calling on_header_end with no data
+2023-04-26 11:17:04,559 DEBUG Calling on_headers_finished with no data
+2023-04-26 11:17:04,559 DEBUG Calling on_part_data with data[154:30795]
+2023-04-26 11:17:04,559 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:17:04,560 DEBUG Calling on_part_data with data[30796:156790]
+2023-04-26 11:17:04,560 DEBUG Calling on_part_end with no data
+2023-04-26 11:17:04,560 DEBUG Calling on_part_begin with no data
+2023-04-26 11:17:04,560 DEBUG Calling on_header_field with data[156834:156853]
+2023-04-26 11:17:04,560 DEBUG Calling on_header_value with data[156855:156914]
+2023-04-26 11:17:04,560 DEBUG Calling on_header_end with no data
+2023-04-26 11:17:04,560 DEBUG Calling on_header_field with data[156916:156928]
+2023-04-26 11:17:04,560 DEBUG Calling on_header_value with data[156930:156940]
+2023-04-26 11:17:04,560 DEBUG Calling on_header_end with no data
+2023-04-26 11:17:04,560 DEBUG Calling on_headers_finished with no data
+2023-04-26 11:17:04,562 DEBUG Calling on_part_data with data[0:30641]
+2023-04-26 11:17:04,562 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:17:04,562 DEBUG Calling on_part_data with data[30642:156636]
+2023-04-26 11:17:04,562 DEBUG Calling on_part_end with no data
+2023-04-26 11:17:04,562 DEBUG Calling on_part_begin with no data
+2023-04-26 11:17:04,562 DEBUG Calling on_header_field with data[156680:156699]
+2023-04-26 11:17:04,562 DEBUG Calling on_header_value with data[156701:156760]
+2023-04-26 11:17:04,562 DEBUG Calling on_header_end with no data
+2023-04-26 11:17:04,563 DEBUG Calling on_header_field with data[156762:156774]
+2023-04-26 11:17:04,563 DEBUG Calling on_header_value with data[156776:156786]
+2023-04-26 11:17:04,563 DEBUG Calling on_header_end with no data
+2023-04-26 11:17:04,563 DEBUG Calling on_headers_finished with no data
+2023-04-26 11:17:04,563 DEBUG Calling on_part_data with data[156790:187431]
+2023-04-26 11:17:04,563 DEBUG Calling on_part_data with data[0:1]
+2023-04-26 11:17:04,563 DEBUG Calling on_part_data with data[187432:262144]
+2023-04-26 11:17:04,565 DEBUG Calling on_part_data with data[0:51282]
+2023-04-26 11:17:04,565 DEBUG Calling on_part_end with no data
+2023-04-26 11:17:04,565 DEBUG Calling on_end with no data
+2023-04-26 11:17:04,565 DEBUG Upload request received from user None
+2023-04-26 11:17:04,565 DEBUG Operating system: macOS
+2023-04-26 11:17:04,566 DEBUG File uploaded: 442-22004382 copy 3.jpg
+2023-04-26 11:17:04,671 DEBUG Writing file to /Users/musicroom/Dropbox/Mac/Desktop/python/just/api/../uploaded_files/442-22004382 copy 3.jpg
+2023-04-26 11:17:04,671 DEBUG File uploaded: 442-22004382 copy 4.jpg
+2023-04-26 11:17:04,775 DEBUG Writing file to /Users/musicroom/Dropbox/Mac/Desktop/python/just/api/../uploaded_files/442-22004382 copy 4.jpg
+2023-04-26 11:17:04,775 DEBUG File uploaded: 442-22004382 copy 5.jpg
+2023-04-26 11:17:04,878 DEBUG Writing file to /Users/musicroom/Dropbox/Mac/Desktop/python/just/api/../uploaded_files/442-22004382 copy 5.jpg
+2023-04-26 11:17:04,878 DEBUG File uploaded: 442-22004382 copy 6.jpg
+2023-04-26 11:17:04,983 DEBUG Writing file to /Users/musicroom/Dropbox/Mac/Desktop/python/just/api/../uploaded_files/442-22004382 copy 6.jpg

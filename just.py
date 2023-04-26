@@ -5,12 +5,37 @@ from fastapi.staticfiles import StaticFiles
 import subprocess
 import json
 import os
+import platform
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
-static_dir = os.path.abspath("static")
-app.mount("/static", StaticFiles(directory=static_dir), name="static")
+current_dir = os.getcwd()
 
+
+if platform.system() == "Darwin":
+    # macOS go to this path.
+    upload_dir = os.path.join(current_dir, "uploaded_files")
+    static_dir = os.path.join(current_dir, "static")
+    downloads_dir = os.path.join(current_dir, "downloads")
+    print("ITS A MAC!")
+else:
+    # Ubuntu (or other Linux distros) go to this path.
+    upload_dir = "/home/uploaded_files"
+    static_dir = "static"
+    downloads_dir = "downloads"
+    print("ITS NOT A MAC!")
+
+# Mount the directories
+
+print(upload_dir)
+print()
+print(static_dir)
+print()
+print(downloads_dir)
+
+
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
+app.mount("/uploaded_files", StaticFiles(directory=upload_dir), name="uploaded_files")
 
 
 

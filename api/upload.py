@@ -44,8 +44,6 @@ async def upload_files(request: Request, files: List[UploadFile] = File(..., max
 
     for file in files:
         print(f"File: {file.filename}")
-        file_content = await file.read()
-        print(file_content)
 
     for file in files:
 

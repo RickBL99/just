@@ -30,17 +30,17 @@ async def upload_files(request: Request, files: List[UploadFile] = File(..., max
         upload_dir = os.path.join(current_dir, "..", "uploaded_files")
         current_dir = os.getcwd()
         os.chdir(upload_dir)
-        logging.debug("Operating system: macOS")
-        logging.debug(current_dir)
-        logging.debug(upload_dir)
+        print("Operating system: macOS")
+        print(current_dir)
+        print(upload_dir)
     else:
         # Ubuntu (or other Linux distros) go to this path.
         upload_dir = "/just/uploaded_files"
         current_dir = os.getcwd()
         os.chdir(upload_dir)
-        logging.debug("Operating system: Linux")
-        logging.debug(current_dir)
-        logging.debug(upload_dir)
+        print("Operating system: Linux")
+        print(current_dir)
+        print(upload_dir)
 
     for file in files:
 
@@ -59,7 +59,8 @@ async def upload_files(request: Request, files: List[UploadFile] = File(..., max
         f.close()
         
 
-
+    print("NOW CHANGING TO CURRENT DIR")
+    print(current_dir)
     os.chdir(current_dir)
     
     return templates.TemplateResponse('index.html', context={'request': request})

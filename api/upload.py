@@ -44,6 +44,7 @@ async def upload_files(request: Request, files: List[UploadFile] = File(..., max
 
     for file_batch in file_batches:
         for file in file_batch:
+            time.sleep(3)
             contents = await file.read()
             with open(file.filename, "wb") as f:
                 f.write(contents)

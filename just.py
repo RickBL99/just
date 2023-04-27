@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Response
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
@@ -55,7 +55,7 @@ api.mount("/uploaded_files", StaticFiles(directory=upload_dir), name="uploaded_f
 
 
 @api.get("/")
-def form_post(request: Request):
+def form_post(request: Request, response:Response):
     result = "Get Files To Upload"
     print(result)
 

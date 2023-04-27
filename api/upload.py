@@ -35,7 +35,7 @@ async def upload_files(request: Request, files: List[UploadFile] = File(..., max
         logging.debug(upload_dir)
     else:
         # Ubuntu (or other Linux distros) go to this path.
-        upload_dir = "/uploaded_files"
+        upload_dir = "/just/uploaded_files"
         current_dir = os.getcwd()
         os.chdir(upload_dir)
         logging.debug("Operating system: Linux")

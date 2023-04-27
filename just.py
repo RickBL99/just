@@ -6,6 +6,7 @@ import subprocess
 import json
 import os
 import platform
+import secrets
 
 
 
@@ -57,6 +58,16 @@ api.mount("/uploaded_files", StaticFiles(directory=upload_dir), name="uploaded_f
 def form_post(request: Request):
     result = "Get Files To Upload"
     print(result)
+
+     # Generate a secure random session ID
+    session_id = secrets.token_hex(16)
+    
+    # Set a cookie named "session_id" with the value of the session ID
+    response.set_cookie(key="session_id", value=session_id)
+
+    print("Added the cookie.")
+    print(session_id)
+
     return templates.TemplateResponse('upload.html', context={'request': request, 'result': result})
 
 

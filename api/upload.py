@@ -46,10 +46,10 @@ async def upload_files(request: Request, files: List[UploadFile] = File(..., max
 
         file_ext = os.path.splitext(file.filename)[1].lower()
 
-        logging.debug(f'File uploaded: {file.filename}')
+        print(f'File uploaded: {file.filename}')
         contents = await file.read()
         
-        time.sleep(0.1)  # sleep for 100 milliseconds
+        time.sleep(1)  # sleep for 100 milliseconds
 
         # Save original file
         file_path = os.path.join(upload_dir, file.filename)

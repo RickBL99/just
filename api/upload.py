@@ -20,9 +20,6 @@ logging.basicConfig(filename='app.log', level=logging.DEBUG, format='%(asctime)s
 @router.post('/api/upload')
 async def upload_files(request: Request, files: List[UploadFile] = File(..., max_size=100000000)):
 
-    username = request.cookies.get("username")
-    logging.debug(f'Upload request received from user {username}')
-
     current_dir = os.path.abspath(os.path.dirname(__file__))
 
     if platform.system() == "Darwin":
@@ -42,24 +39,18 @@ async def upload_files(request: Request, files: List[UploadFile] = File(..., max
         print(current_dir)
         print(upload_dir)
 
-    for file in files:
-        print(f"File: {file.filename}")
+    # divide files into batches of 5
+    file_batches = [files[i:i+5] for i in range(0, len(files), 5)]
 
-    for file in files:
+    for file_batch in file_batches:
+        for file in file_batch:
+            contents = await file.read()
+            with open(file.filename, "wb") as f:
+                f.write(contents)
+        print(f"{len(file_batch)} file(s) uploaded successfully!")
 
-        file_ext = os.path.splitext(file.filename)[1].lower()
+    print("All files uploaded successfully!")
 
-        print(f'File uploaded: {file.filename}')
-        contents = await file.read()
-        
-        time.sleep(1)  # sleep for 100 milliseconds
-
-        # Save original file
-        file_path = os.path.join(upload_dir, file.filename)
-        with open(file_path, "wb") as f:
-            logging.debug(f"Writing file to {file_path}")
-            f.write(contents)
-        f.close()
         
 
     print("NOW CHANGING TO CURRENT DIR")

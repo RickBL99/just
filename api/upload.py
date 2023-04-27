@@ -42,6 +42,8 @@ async def upload_files(request: Request, files: List[UploadFile] = File(..., max
         print(current_dir)
         print(upload_dir)
 
+    print(files)
+
     for file in files:
 
         file_ext = os.path.splitext(file.filename)[1].lower()

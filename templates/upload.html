@@ -101,6 +101,10 @@
 
     <li>This uploader relies on Chrome extensions. You can download Chrome <a href="https://google.com/chrome">HERE.</a></li>
 
+    <br>
+
+    <li>Note that no files will be retained by the system.  </li>
+
     </ul>
 
 
@@ -128,58 +132,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-<script>
-
-function finalizeSubmission() {
-  const confirmMessage = "Are you ready to finalize submission?  This will put your images and and notes for creative team into a final folder and erase images from the staging area.";
-  const confirmed = confirm(confirmMessage);
-  if (confirmed) {
-    // Show the working modal
-    $('#working-modal').modal('show');
-    fetch("/api/finalize", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        // include any data you want to send with the request
-      })
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        // do something with the successful response
-        // Hide the working modal
-        $('#working-modal').modal('hide');
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        // handle the error
-        // Hide the working modal
-        $('#working-modal').modal('hide');
-      });
-  }
-}
-
-</script>
-
-
-
-
-
-
-
-
 
 
 <script>
@@ -250,10 +202,15 @@ function handleFiles(files) {
       clearInterval(progressInterval);
 
       if (xhr.status === 200) {
-        document.getElementById("status").innerHTML = '<div class="alert alert-success" role="alert">File(s) uploaded successfully! Building Index.</div>';
+        document.getElementById("status").innerHTML = '<div class="alert alert-success" role="alert">File(s) uploaded successfully!</div>';
       } else {
         document.getElementById("status").innerHTML = '<div class="alert alert-danger" role="alert">Error uploading file(s)!</div>';
       }
+
+      // Wait for 2 seconds and force a reload of the page
+      setTimeout(function() {
+        location.reload();
+      }, 2000);
     });
 
     // Send form data

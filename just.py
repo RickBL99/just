@@ -55,20 +55,31 @@ api.mount("/uploaded_files", StaticFiles(directory=upload_dir), name="uploaded_f
 
 
 @api.get("/")
-def form_post(request: Request, response:Response):
+def form_post(request: Request):
+    
     result = "Get Files To Upload"
     print(result)
 
-     # Generate a secure random session ID
+    # Generate a secure random session ID
     session_id = secrets.token_hex(16)
-    
-    # Set a cookie named "session_id" with the value of the session ID
-    response.set_cookie(key="session_id", value=session_id)
+
+    try:
+        headers = {"Set-Cookie": f"session_id={session_id}; Max-Age=3600; Path=/"}
+    except Exception as e:
+        print("Exception:", e)
 
     print("Added the cookie.")
-    print(session_id)
+    print(f"Session ID: {session_id}")
 
-    return templates.TemplateResponse('upload.html', context={'request': request, 'result': result})
+    # Get the value of the session ID cookie
+    cookie_value = request.cookies.get('session_id')
+    print(f"Cookie value: {cookie_value}")
+    print(f"Cookie exists: {cookie_value is not None}")
+
+    # Return a TemplateResponse object that uses the upload.html template
+    return templates.TemplateResponse("upload.html", {"request": request, "result": result}, headers=headers)
+
+
 
 
 

@@ -34,11 +34,8 @@ api.include_router(upload.router)
 
 # MOUNT PATHS
 
-static_dir = os.path.join(current_dir, "static")
-upload_dir = os.path.join(current_dir, "uploaded_files")
-
-api.mount("/static", StaticFiles(directory=static_dir), name="static")
-api.mount("/uploaded_files", StaticFiles(directory=upload_dir), name="uploaded_files")
+api.mount('/static', StaticFiles(directory='static'), name='static')
+api.mount("/uploaded_files", StaticFiles(directory='uploaded_files'), name="uploaded_files")
 
 
 # APPLICATION API

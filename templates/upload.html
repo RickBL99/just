@@ -72,20 +72,11 @@
 <!--       <button type="button" id="leave-note-button" class="btn btn-block btn-primary mt-3" data-toggle="modal" data-target="#note-modal">Leave Note For Creative Team</button>
  <button type="button" id="finalize_submission" class="btn btn-block btn-success mt-3" data-toggle="modal" onclick="finalizeSubmission()">Finalize Submission</button> -->
 
-
-
-
-
-
-
             <div></div>
           </div>
           <br>
         </div>
       </div>
-
-
-
 
       <div class="row justify-content-center">
 
@@ -117,6 +108,27 @@
       <i><p class="text-center mb-0"><a href="https://superstock.com">Brought to you by SuperStock.  Interested in licensing your content, let's talk!</a></p></i>
 
     </div> 
+
+<!-- Error Modal -->
+<div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="error-modal-label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="error-modal-label">Error</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Whoa. Simma down na. Try fewer than 30 at a time.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 <!-- Working Modal -->
@@ -160,6 +172,14 @@ function resetStatus() {
 
 
 function handleFiles(files) {
+
+   if (files.length > 30) {
+    // Display error modal
+    $('#error-modal').modal('show');
+    return;
+  }
+
+
   var formData = new FormData();
   var unsupportedTypeAlertShown = false; // Flag to keep track of whether the unsupported type alert has been displayed
   var hasUnsupportedFiles = false; // Flag to keep track of whether there are unsupported files

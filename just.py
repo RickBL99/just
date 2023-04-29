@@ -13,6 +13,9 @@ api = FastAPI()
 templates = Jinja2Templates(directory="templates")
 current_dir = os.getcwd()
 
+logging.getLogger().handlers.clear()
+
+
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s')
 
 # Add a StreamHandler to log to console

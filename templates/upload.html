@@ -196,7 +196,7 @@ function handleFiles(files) {
         progress += 100 / totalFiles;
         document.getElementById("status").textContent = "Uploading file(s): " + Math.round(progress) + "%";
       }
-    }, 1000);
+    }, 500);
 
     xhr.addEventListener("load", function () {
       clearInterval(progressInterval);

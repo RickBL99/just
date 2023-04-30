@@ -59,6 +59,13 @@ async def getallmeta(request: Request, image_number: str = Query(None)):
                 pretty_metadata = json.dumps(data, indent=4)
                 logger.debug(f"Metadata retrieved successfully for {filename}")
 
+                # Get GPS data and add to the dictionary of results
+                gps_data = {}
+                if 'GPSLatitude' in data and 'GPSLongitude' in data:
+                    gps_data['latitude'] = data['GPSLatitude']
+                    gps_data['longitude'] = data['GPSLongitude']
+                data['gps_data'] = gps_data
+
                 all_metadata.append([filename, data])
 
             except subprocess.CalledProcessError as e:
@@ -72,3 +79,4 @@ async def getallmeta(request: Request, image_number: str = Query(None)):
     print(all_metadata)
 
     return templates.TemplateResponse('getallmeta.html', context={'request': request, 'all_metadata':all_metadata, 'context':context, 'fullpath':fullpath}, status_code=200, media_type='text/html')
+

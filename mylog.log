@@ -398,3 +398,37 @@
 2023-04-30 10:28:10,906 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6887.jpg
 2023-04-30 10:28:11,041 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6893.jpg
 2023-04-30 10:28:11,173 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6894.jpg
+2023-04-30 10:57:40,019 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:57:40,019 - api.getallmeta - DEBUG - Full path: uploaded_files/7dbb423ada16241e0b53921327fb0cd7
+2023-04-30 10:57:40,191 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6889.jpg
+2023-04-30 10:57:40,326 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:57:40,459 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6885.jpg
+2023-04-30 10:57:40,592 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6890.jpg
+2023-04-30 10:57:40,729 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6886.jpg
+2023-04-30 10:57:40,863 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6887.jpg
+2023-04-30 10:59:00,797 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:59:00,798 - api.getallmeta - DEBUG - Full path: uploaded_files/7dbb423ada16241e0b53921327fb0cd7
+2023-04-30 10:59:01,022 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6889.jpg
+2023-04-30 10:59:01,170 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:59:01,308 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6885.jpg
+2023-04-30 10:59:01,463 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6890.jpg
+2023-04-30 10:59:01,612 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6886.jpg
+2023-04-30 10:59:01,924 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_0611.jpeg
+2023-04-30 10:59:02,069 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6887.jpg
+2023-04-30 11:03:15,682 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 11:03:15,697 - api.getallmeta - DEBUG - Full path: uploaded_files/994eed59892cfd0821e7f95ea71f32cb
+2023-04-30 11:03:15,930 - api.getallmeta - DEBUG - Metadata retrieved successfully for valentin-bolder-oGrsLY8uRNM-unsplash.jpg
+2023-04-30 11:03:16,067 - api.getallmeta - DEBUG - Metadata retrieved successfully for mehran-biabani-C9hfTIljMD4-unsplash.jpg
+2023-04-30 11:03:16,202 - api.getallmeta - DEBUG - Metadata retrieved successfully for josh-hild-GDWle6useeg-unsplash.jpg
+2023-04-30 11:03:16,467 - api.getallmeta - DEBUG - Metadata retrieved successfully for 4009-20250953.jpg
+2023-04-30 11:03:16,598 - api.getallmeta - DEBUG - Metadata retrieved successfully for megan-ruth-YlTjPyzqi2k-unsplash.jpg
+2023-04-30 11:03:16,750 - api.getallmeta - DEBUG - Metadata retrieved successfully for josh-withers-mUkvPxmLOgE-unsplash.jpg
+2023-04-30 11:03:16,889 - api.getallmeta - DEBUG - Metadata retrieved successfully for megan-ruth-ffGT4IeqlPI-unsplash.jpg
+2023-04-30 11:03:17,074 - api.getallmeta - DEBUG - Metadata retrieved successfully for 4009-20250966.jpg
+2023-04-30 11:03:17,374 - api.getallmeta - DEBUG - Metadata retrieved successfully for 4009-24461186.jpg
+2023-04-30 11:03:17,506 - api.getallmeta - DEBUG - Metadata retrieved successfully for stephen-leonardi-9TnM2zH4Ur8-unsplash.jpg
+2023-04-30 11:03:17,658 - api.getallmeta - DEBUG - Metadata retrieved successfully for ilia-bronskiy-mWFKSKd27PM-unsplash.jpg
+2023-04-30 11:32:55,942 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 11:32:55,977 - api.getallmeta - DEBUG - Full path: uploaded_files/0ccf6670f46748bf66cd854d05a2f138
+2023-04-30 11:32:56,207 - api.getallmeta - DEBUG - Metadata retrieved successfully for gps.jpg
+2023-04-30 11:32:56,557 - api.getallmeta - DEBUG - Metadata retrieved successfully for 4009-24461186.jpg

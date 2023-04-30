@@ -41,6 +41,11 @@
   left: 40%;
   padding-top: 50px;
 }
+
+#get-meta-button {
+  display: none;
+}
+
 </style>
 
 <html>
@@ -71,7 +76,7 @@
        <!-- <button type="button" id="view-uploaded-files-button" class="btn btn-block btn-primary mt-3" onclick="submitForm('/api/get_upload_list')">Check / Delete Uploaded File(s)</button> -->
 
       <button type="button" id="get-meta-button" class="btn btn-block btn-primary mt-3" onclick="submitForm('/api/getallmeta')">Show Me The Meta</button>
-      <button type="button" id="get-meta-button" class="btn btn-block btn-primary mt-3" onclick="window.location.href='/'">Clear All. Start Again.</button>
+      <button type="button" id="start-again" class="btn btn-block btn-primary mt-3" onclick="window.location.href='/'">Clear Data. Start Again.</button>
 
 
 
@@ -234,6 +239,7 @@ function handleFiles(files) {
 
       if (xhr.status === 200) {
         document.getElementById("status").innerHTML = '<div class="alert alert-success" role="alert">File(s) uploaded successfully!</div>';
+        document.getElementById("get-meta-button").style.display = "block";
       } else {
         document.getElementById("status").innerHTML = '<div class="alert alert-danger" role="alert">Error uploading file(s)!</div>';
       }

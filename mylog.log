@@ -292,3 +292,109 @@
 2023-04-29 17:55:16,776 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6881.jpg
 2023-04-29 17:55:37,418 - api.getallmeta - DEBUG - getallmeta function called
 2023-04-29 17:55:37,419 - api.getallmeta - DEBUG - Full path: uploaded_files/c5dfb1448c3949adc30e492578c5195f
+2023-04-30 10:12:54,009 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:12:54,027 - api.getallmeta - DEBUG - Full path: uploaded_files/dca6d14916baec34190c39b700d368dd
+2023-04-30 10:12:54,406 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6889.jpg
+2023-04-30 10:12:54,543 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:12:54,680 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6885.jpg
+2023-04-30 10:12:54,827 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6891.jpg
+2023-04-30 10:12:54,967 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6890.jpg
+2023-04-30 10:12:55,107 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6884.jpg
+2023-04-30 10:12:55,243 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6892.jpg
+2023-04-30 10:12:55,378 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6886.jpg
+2023-04-30 10:12:55,511 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6887.jpg
+2023-04-30 10:12:55,645 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6893.jpg
+2023-04-30 10:13:30,334 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:13:30,352 - api.getallmeta - DEBUG - Full path: uploaded_files/a437767c15028ae736664302f9675f13
+2023-04-30 10:13:30,571 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6889.jpg
+2023-04-30 10:13:30,705 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:13:30,838 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6885.jpg
+2023-04-30 10:13:30,974 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6891.jpg
+2023-04-30 10:13:31,109 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6890.jpg
+2023-04-30 10:13:31,242 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6884.jpg
+2023-04-30 10:13:31,375 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6886.jpg
+2023-04-30 10:13:31,512 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6887.jpg
+2023-04-30 10:13:31,651 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6883.jpg
+2023-04-30 10:16:12,507 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:16:12,514 - api.getallmeta - DEBUG - Full path: uploaded_files/a437767c15028ae736664302f9675f13
+2023-04-30 10:16:12,776 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6889.jpg
+2023-04-30 10:16:12,914 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:16:13,056 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6885.jpg
+2023-04-30 10:16:13,205 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6891.jpg
+2023-04-30 10:16:13,345 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6890.jpg
+2023-04-30 10:16:13,485 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6884.jpg
+2023-04-30 10:16:13,625 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6892.jpg
+2023-04-30 10:16:13,766 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6886.jpg
+2023-04-30 10:16:13,907 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6887.jpg
+2023-04-30 10:16:14,049 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6893.jpg
+2023-04-30 10:16:14,220 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6883.jpg
+2023-04-30 10:19:43,642 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:19:43,642 - api.getallmeta - DEBUG - Full path: uploaded_files/a437767c15028ae736664302f9675f13
+2023-04-30 10:19:43,895 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6889.jpg
+2023-04-30 10:19:44,037 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:19:44,214 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6885.jpg
+2023-04-30 10:19:44,347 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6891.jpg
+2023-04-30 10:19:44,480 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6890.jpg
+2023-04-30 10:19:44,612 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6884.jpg
+2023-04-30 10:19:44,744 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6892.jpg
+2023-04-30 10:19:44,876 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6886.jpg
+2023-04-30 10:19:45,006 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6887.jpg
+2023-04-30 10:19:45,266 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6893.jpg
+2023-04-30 10:19:45,416 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6883.jpg
+2023-04-30 10:20:30,271 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:20:30,293 - api.getallmeta - DEBUG - Full path: uploaded_files/a437767c15028ae736664302f9675f13
+2023-04-30 10:20:30,578 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6889.jpg
+2023-04-30 10:20:30,735 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:20:30,890 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6885.jpg
+2023-04-30 10:20:31,058 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6891.jpg
+2023-04-30 10:20:31,190 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6890.jpg
+2023-04-30 10:20:31,322 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6884.jpg
+2023-04-30 10:20:31,465 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6892.jpg
+2023-04-30 10:20:31,706 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6886.jpg
+2023-04-30 10:20:31,843 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6887.jpg
+2023-04-30 10:20:31,983 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6893.jpg
+2023-04-30 10:20:32,124 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6883.jpg
+2023-04-30 10:22:50,857 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:22:50,869 - api.getallmeta - DEBUG - Full path: uploaded_files/afe9153590dec25edf83d978cf2fed72
+2023-04-30 10:22:51,187 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:24:03,839 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:24:03,840 - api.getallmeta - DEBUG - Full path: uploaded_files/afe9153590dec25edf83d978cf2fed72
+2023-04-30 10:24:04,018 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:24:04,151 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6890.jpg
+2023-04-30 10:27:26,589 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:27:26,590 - api.getallmeta - DEBUG - Full path: uploaded_files/afe9153590dec25edf83d978cf2fed72
+2023-04-30 10:27:26,804 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6889.jpg
+2023-04-30 10:27:26,945 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:27:27,105 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6885.jpg
+2023-04-30 10:27:27,243 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6891.jpg
+2023-04-30 10:27:27,376 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6890.jpg
+2023-04-30 10:27:27,513 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6884.jpg
+2023-04-30 10:27:27,644 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6892.jpg
+2023-04-30 10:27:27,775 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6886.jpg
+2023-04-30 10:27:27,906 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6887.jpg
+2023-04-30 10:27:28,037 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6893.jpg
+2023-04-30 10:27:51,530 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:27:51,530 - api.getallmeta - DEBUG - Full path: uploaded_files/afe9153590dec25edf83d978cf2fed72
+2023-04-30 10:27:51,681 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6889.jpg
+2023-04-30 10:27:51,822 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:27:51,962 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6885.jpg
+2023-04-30 10:27:52,115 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6891.jpg
+2023-04-30 10:27:52,257 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6890.jpg
+2023-04-30 10:27:52,404 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6884.jpg
+2023-04-30 10:27:52,547 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6892.jpg
+2023-04-30 10:27:52,682 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6886.jpg
+2023-04-30 10:27:52,813 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6887.jpg
+2023-04-30 10:27:52,946 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6893.jpg
+2023-04-30 10:28:09,667 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 10:28:09,667 - api.getallmeta - DEBUG - Full path: uploaded_files/afe9153590dec25edf83d978cf2fed72
+2023-04-30 10:28:09,805 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6889.jpg
+2023-04-30 10:28:09,936 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6888.jpg
+2023-04-30 10:28:10,068 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6885.jpg
+2023-04-30 10:28:10,203 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6891.jpg
+2023-04-30 10:28:10,369 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6890.jpg
+2023-04-30 10:28:10,504 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6884.jpg
+2023-04-30 10:28:10,638 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6892.jpg
+2023-04-30 10:28:10,773 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6886.jpg
+2023-04-30 10:28:10,906 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6887.jpg
+2023-04-30 10:28:11,041 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6893.jpg
+2023-04-30 10:28:11,173 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6894.jpg

@@ -71,4 +71,4 @@ async def getallmeta(request: Request, image_number: str = Query(None)):
 
     print(all_metadata)
 
-    return templates.TemplateResponse('getallmeta.html', context={'request': request, 'all_metadata':all_metadata, 'context':context}, status_code=200, media_type='text/html')
+    return templates.TemplateResponse('getallmeta.html', context={'request': request, 'all_metadata':all_metadata, 'context':context, 'fullpath':fullpath}, status_code=200, media_type='text/html')

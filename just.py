@@ -28,8 +28,10 @@ logging.getLogger('').addHandler(console)
 # GET ALL API >PY FILES
 
 from api import upload
+from api import getallmeta
 
 api.include_router(upload.router)
+api.include_router(getallmeta.router)
 
 
 # MOUNT PATHS

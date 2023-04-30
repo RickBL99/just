@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <title>Get The Meta</title>
+    <title>Just The Meta</title>
     <link rel="shortcut icon" type="image/jpg" href="/static/favicon.ico"/>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
@@ -67,7 +67,11 @@
 
        <!-- <button type="button" id="view-uploaded-files-button" class="btn btn-block btn-primary mt-3" onclick="submitForm('/api/get_upload_list')">Check / Delete Uploaded File(s)</button> -->
 
-      <button type="button" id="get-meta-button" class="btn btn-block btn-primary mt-3" onclick="submitForm('/api/getmetalist')">Show Me The Meta</button>
+      <button type="button" id="get-meta-button" class="btn btn-block btn-primary mt-3" onclick="submitForm('/api/getallmeta')">Show Me The Meta</button>
+      <button type="button" id="get-meta-button" class="btn btn-block btn-primary mt-3" onclick="window.location.href='/'">Clear All. Start Again.</button>
+
+
+
 <!--       <button type="button" id="leave-note-button" class="btn btn-block btn-primary mt-3" data-toggle="modal" data-target="#note-modal">Leave Note For Creative Team</button>
  <button type="button" id="finalize_submission" class="btn btn-block btn-success mt-3" data-toggle="modal" onclick="finalizeSubmission()">Finalize Submission</button> -->
 
@@ -104,7 +108,12 @@
 
       <br>
 
-      <i><p class="text-center mb-0"><a href="https://superstock.com">Brought to you by SuperStock.  Interested in licensing your content, let's talk!</a></p></i>
+   <br>
+<div class="text-center">
+    <img src="/static/logo.png" alt="SuperStock Logo" width="200">
+    <p class="mb-0">Brought to you by your friends at SuperStock. Interested in licensing your content? <a href="https://superstock.com">Let's talk!</a></p>
+</div>
+
 
     </div> 
 
@@ -227,9 +236,9 @@ function handleFiles(files) {
       }
 
       // Wait for 2 seconds and force a reload of the page
-      setTimeout(function() {
-        location.reload();
-      }, 2000);
+      // setTimeout(function() {
+      //   location.reload();
+      // }, 2000);
     });
 
     // Send form data

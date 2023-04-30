@@ -93,9 +93,9 @@ async def index(request: Request):
     # Pass the table HTML and filename to the template
     return templates.TemplateResponse("index.html", {"request": request, "table_html": table_html, "filename": filename})
 
-
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run(api, host="127.0.0.1", port=8000)
+    uvicorn.run("just:api", host="127.0.0.1", port=8000, workers=6)
+
 
 

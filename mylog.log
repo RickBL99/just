@@ -432,3 +432,6 @@
 2023-04-30 11:32:55,977 - api.getallmeta - DEBUG - Full path: uploaded_files/0ccf6670f46748bf66cd854d05a2f138
 2023-04-30 11:32:56,207 - api.getallmeta - DEBUG - Metadata retrieved successfully for gps.jpg
 2023-04-30 11:32:56,557 - api.getallmeta - DEBUG - Metadata retrieved successfully for 4009-24461186.jpg
+2023-04-30 12:24:59,503 - api.getallmeta - DEBUG - getallmeta function called
+2023-04-30 12:24:59,504 - api.getallmeta - DEBUG - Full path: uploaded_files/188cb11ec2ecc4898b715b48959df4ea
+2023-04-30 12:24:59,813 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6892.jpg

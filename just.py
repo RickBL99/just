@@ -30,17 +30,17 @@ logging.getLogger('').addHandler(console)
 from api import upload
 from api import getallmeta
 
-logger.debug("Including upload router")
+logging.debug("Including upload router")
 api.include_router(upload.router)
 
-logger.debug("Including getallmeta router")
+logging.debug("Including getallmeta router")
 api.include_router(getallmeta.router)
 
 # Mount static and uploaded_files directories
-logger.debug("Mounting static directory")
+logging.debug("Mounting static directory")
 api.mount('/static', StaticFiles(directory='static'), name='static')
 
-logger.debug("Mounting uploaded_files directory")
+logging.debug("Mounting uploaded_files directory")
 api.mount("/uploaded_files", StaticFiles(directory='uploaded_files'), name="uploaded_files")
 
 print(os.path.abspath('static/logo.png'))

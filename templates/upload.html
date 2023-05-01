@@ -252,7 +252,7 @@ function handleFiles(files) {
         document.getElementById("status").innerHTML = '<div class="alert alert-success" role="alert">File(s) uploaded successfully!</div>';
         document.getElementById("get-meta-button").style.display = "block";
       } else {
-        document.getElementById("status").innerHTML = '<div class="alert alert-danger" role="alert">Error uploading file(s)!</div>';
+        document.getElementById("status").innerHTML = '<div class="alert alert-danger" role="alert">Error uploading file(s)! Please reload page and try again.</div>';
       }
 
       // Wait for 2 seconds and force a reload of the page

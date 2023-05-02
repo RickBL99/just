@@ -435,3 +435,8 @@
 2023-04-30 12:24:59,503 - api.getallmeta - DEBUG - getallmeta function called
 2023-04-30 12:24:59,504 - api.getallmeta - DEBUG - Full path: uploaded_files/188cb11ec2ecc4898b715b48959df4ea
 2023-04-30 12:24:59,813 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6892.jpg
+2023-05-01 18:17:15,585 - api.getallmeta - DEBUG - getallmeta function called
+2023-05-01 18:17:15,601 - api.getallmeta - DEBUG - Full path: uploaded_files/9333810e9112aa7c67ee37b89ce1b3ca
+2023-05-01 18:17:15,881 - api.getallmeta - DEBUG - Metadata retrieved successfully for megan-ruth-YlTjPyzqi2k-unsplash.jpg
+2023-05-01 18:17:16,012 - api.getallmeta - DEBUG - Metadata retrieved successfully for josh-withers-mUkvPxmLOgE-unsplash.jpg
+2023-05-01 18:17:16,144 - api.getallmeta - DEBUG - Metadata retrieved successfully for megan-ruth-ffGT4IeqlPI-unsplash.jpg

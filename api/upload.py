@@ -57,6 +57,7 @@ async def upload_files(request: Request, files: List[UploadFile] = File(..., max
 
     for file in files:
         contents = await file.read()
+        time.sleep(1)
         logging.info(f"Received file {file.filename}")
         with open(os.path.join(str(upload_dir), file.filename), "wb") as f:
             f.write(contents)

@@ -440,3 +440,49 @@
 2023-05-01 18:17:15,881 - api.getallmeta - DEBUG - Metadata retrieved successfully for megan-ruth-YlTjPyzqi2k-unsplash.jpg
 2023-05-01 18:17:16,012 - api.getallmeta - DEBUG - Metadata retrieved successfully for josh-withers-mUkvPxmLOgE-unsplash.jpg
 2023-05-01 18:17:16,144 - api.getallmeta - DEBUG - Metadata retrieved successfully for megan-ruth-ffGT4IeqlPI-unsplash.jpg
+2023-06-22 13:07:13,530 - api.getallmeta - DEBUG - getallmeta function called
+2023-06-22 13:07:13,531 - api.getallmeta - DEBUG - Full path: uploaded_files/ed71921e68188380921f0016ec6c25a9
+2023-06-22 13:07:14,225 - api.getallmeta - DEBUG - Metadata retrieved successfully for Screen Shot 2023-05-25 at 2.57.31 PM.png
+2023-06-22 13:07:14,467 - api.getallmeta - DEBUG - Metadata retrieved successfully for Screen Shot 2023-05-24 at 5.17.20 PM.png
+2023-06-22 13:07:14,705 - api.getallmeta - DEBUG - Metadata retrieved successfully for Screen Shot 2023-06-02 at 10.40.07 AM.png
+2023-06-22 13:10:16,830 - api.getallmeta - DEBUG - getallmeta function called
+2023-06-22 13:10:16,831 - api.getallmeta - DEBUG - Full path: uploaded_files/de84279bef122ac7904ee1f6b35e112a
+2023-06-22 13:10:46,162 - api.getallmeta - DEBUG - getallmeta function called
+2023-06-22 13:10:46,162 - api.getallmeta - DEBUG - Full path: uploaded_files/de84279bef122ac7904ee1f6b35e112a
+2023-06-22 13:10:46,401 - api.getallmeta - DEBUG - Metadata retrieved successfully for Screen Shot 2023-06-02 at 10.40.07 AM.png
+2023-06-22 13:11:56,939 - api.getallmeta - DEBUG - getallmeta function called
+2023-06-22 13:11:56,940 - api.getallmeta - DEBUG - Full path: uploaded_files/de84279bef122ac7904ee1f6b35e112a
+2023-06-22 13:11:57,191 - api.getallmeta - DEBUG - Metadata retrieved successfully for Screen Shot 2023-06-02 at 10.40.07 AM.png
+2023-06-22 13:12:40,640 - api.getallmeta - DEBUG - getallmeta function called
+2023-06-22 13:12:40,640 - api.getallmeta - DEBUG - Full path: uploaded_files/c04f9d3ead9af484500d80539cf38a59
+2023-06-22 13:13:48,753 - api.getallmeta - DEBUG - getallmeta function called
+2023-06-22 13:13:48,753 - api.getallmeta - DEBUG - Full path: uploaded_files/c04f9d3ead9af484500d80539cf38a59
+2023-06-22 13:13:49,007 - api.getallmeta - DEBUG - Metadata retrieved successfully for Screen Shot 2023-06-02 at 10.40.07 AM.png
+2023-06-22 13:15:06,441 - api.getallmeta - DEBUG - getallmeta function called
+2023-06-22 13:15:06,442 - api.getallmeta - DEBUG - Full path: uploaded_files/c04f9d3ead9af484500d80539cf38a59
+2023-06-22 13:15:06,620 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0053.jpg
+2023-06-22 13:15:06,857 - api.getallmeta - DEBUG - Metadata retrieved successfully for Screen Shot 2023-06-02 at 10.40.07 AM.png
+2023-06-22 13:19:11,844 - api.getallmeta - DEBUG - getallmeta function called
+2023-06-22 13:19:11,845 - api.getallmeta - DEBUG - Full path: uploaded_files/6cf8923705af910ec414c6c88f80ac6b
+2023-06-22 13:19:12,055 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0045.jpg
+2023-06-22 13:19:12,229 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0053.jpg
+2023-06-22 13:19:12,406 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0020.jpg
+2023-06-22 13:19:12,580 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0035.jpg
+2023-06-22 13:19:12,752 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0023.jpg
+2023-06-22 13:19:12,922 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0027.jpg
+2023-06-22 13:19:13,093 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0031.jpg
+2023-06-22 13:19:13,264 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0016.jpg
+2023-06-22 13:19:13,435 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0010.jpg
+2023-06-22 13:19:13,606 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0049.jpg
+2023-06-22 13:25:11,326 - api.getallmeta - DEBUG - getallmeta function called
+2023-06-22 13:25:11,326 - api.getallmeta - DEBUG - Full path: uploaded_files/41c74b280f9c09addebd8b0377d2e121
+2023-06-22 13:25:11,512 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0045.JPG
+2023-06-22 13:25:11,686 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0053.jpg
+2023-06-22 13:25:11,857 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0020.jpg
+2023-06-22 13:25:12,032 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0035.jpg
+2023-06-22 13:25:12,207 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0023.jpg
+2023-06-22 13:25:12,383 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0027.jpg
+2023-06-22 13:25:12,565 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0031.jpg
+2023-06-22 13:25:12,741 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0016.jpg
+2023-06-22 13:25:12,914 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0010.jpg
+2023-06-22 13:25:13,089 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0049.jpg

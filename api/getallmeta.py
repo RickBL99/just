@@ -48,9 +48,10 @@ async def getallmeta(request: Request, image_number: str = Query(None)):
         return templates.TemplateResponse('error.html', context={'request': request, 'error_message': "Please upload some images to get started."}, status_code=404, media_type='text/html')
 
     all_metadata = []
+    suffixes = [".jpg", ".jpeg", ".png", ".JPG", ".PNG", ".JPEG", ".gif", ".GIF", ".bmp", ".BMP", ".PSD", ".psd", ".RAW", ".raw", ".DNG", ".dng", ".CR2", ".cr2", ".NEF", ".nef", ".SR2", ".sr2"]
 
     for filename in os.listdir(fullpath):
-        if filename.endswith(".jpg") or filename.endswith(".jpeg") or filename.endswith(".png"):
+        if any(filename.endswith(suffix) for suffix in suffixes):
             filepath = os.path.join(fullpath, filename)
 
             try:

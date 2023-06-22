@@ -1,0 +1,7 @@
+2023-06-22 14:14:47,219 - api.getallmeta - DEBUG - getallmeta function called
+2023-06-22 14:14:47,219 - api.getallmeta - DEBUG - Full path: uploaded_files/5dec010468ae00f7f4789ad716c78d69
+2023-06-22 14:14:47,418 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0045.JPG
+2023-06-22 14:14:47,593 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0035.jpg
+2023-06-22 14:14:47,767 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0027.jpg
+2023-06-22 14:14:47,940 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0031.jpg
+2023-06-22 14:14:48,116 - api.getallmeta - DEBUG - Metadata retrieved successfully for 2228073_0049.jpg

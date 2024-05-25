@@ -1,21 +1,19 @@
-from fastapi import FastAPI, Request, Response
-from fastapi.responses import HTMLResponse
-from fastapi.templating import Jinja2Templates
-from fastapi.staticfiles import StaticFiles
 import subprocess
 import json
 import os
 import platform
 import secrets
 import logging
+from fastapi import FastAPI, Request, Response
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 
 api = FastAPI()
 templates = Jinja2Templates(directory="templates")
 current_dir = os.getcwd()
 
 logging.getLogger().handlers.clear()
-
-
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s')
 
 # Add a StreamHandler to log to console
@@ -26,7 +24,6 @@ console.setFormatter(formatter)
 logging.getLogger('').addHandler(console)
 
 # GET ALL API >PY FILES
-
 from api import upload
 from api import getallmeta
 
@@ -45,17 +42,11 @@ api.mount("/uploaded_files", StaticFiles(directory='uploaded_files'), name="uplo
 
 print(os.path.abspath('static/logo.png'))
 
-
 # APPLICATION API
-
 @api.get("/")
 def form_post(request: Request):
-
-    # Generate a secure random session ID
     session_id = secrets.token_hex(16)
-
     logging.info(f"Generated session ID: {session_id}")
-
     try:
         headers = {"Set-Cookie": f"session_id={session_id}; Max-Age=3600; Path=/"}
     except Exception as e:
@@ -64,38 +55,38 @@ def form_post(request: Request):
     logging.info("Added the cookie.")
     logging.info(f"Session ID: {session_id}")
 
-    # Get the value of the session ID cookie
     cookie_value = request.cookies.get('session_id')
     logging.info(f"Cookie value: {cookie_value}")
     logging.info(f"Cookie exists: {cookie_value is not None}")
 
-    # Return a TemplateResponse object that uses the upload.html template
     return templates.TemplateResponse("upload.html", {"request": request}, headers=headers)
-
 
 @api.get("/result", response_class=HTMLResponse)
 async def index(request: Request):
     filename = "test.jpg"
+
+    # Determine the path to exiftool
+    exiftool_path = "exiftool"  # Default to using the system-installed exiftool
+    if not shutil.which("exiftool"):
+        exiftool_path = os.path.join(current_dir, "tools", "exiftool")
+        # Ensure exiftool is executable
+        if platform.system() != "Windows":
+            subprocess.run(["chmod", "+x", exiftool_path])
     
-    # Run exiftool command to fetch all exif information
     logging.info(f"Running exiftool command on file {filename}")
-    exiftool_output = subprocess.check_output(["exiftool", "-j", f"static/{filename}"])
+    exiftool_output = subprocess.check_output([exiftool_path, "-j", f"static/{filename}"])
     
-    # Convert the output to a list of dictionaries
     exif_data = json.loads(exiftool_output)
     
-    # Render the data in a table using Bootstrap
     table_rows = ""
     for item in exif_data[0].items():
         table_rows += f"<tr><td>{item[0]}</td><td>{item[1]}</td></tr>"
     table_html = f"<table class='table'>{table_rows}</table>"
     
-    # Pass the table HTML and filename to the template
     return templates.TemplateResponse("index.html", {"request": request, "table_html": table_html, "filename": filename})
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run("just:api", host="127.0.0.1", port=8000, workers=6)
-
+    uvicorn.run("just:api", host="0.0.0.0", port=8000)
 
 

@@ -67,12 +67,13 @@ async def index(request: Request):
 
     # Determine the path to exiftool
     exiftool_path = "exiftool"  # Default to using the system-installed exiftool
-    if not shutil.which("exiftool"):
+    if not os.path.isfile(exiftool_path) or not os.access(exiftool_path, os.X_OK):
         exiftool_path = os.path.join(current_dir, "tools", "exiftool")
         # Ensure exiftool is executable
         if platform.system() != "Windows":
             subprocess.run(["chmod", "+x", exiftool_path])
-    
+
+    logging.info(f"Using exiftool path: {exiftool_path}")
     logging.info(f"Running exiftool command on file {filename}")
     exiftool_output = subprocess.check_output([exiftool_path, "-j", f"static/{filename}"])
     
@@ -88,5 +89,3 @@ async def index(request: Request):
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run("just:api", host="0.0.0.0", port=8000)
-
-

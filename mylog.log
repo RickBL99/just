@@ -61,3 +61,41 @@
 2023-08-13 10:27:18,423 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6567.jpg
 2023-08-13 10:27:18,559 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6565.jpg
 2023-08-13 10:27:18,694 - api.getallmeta - DEBUG - Metadata retrieved successfully for DSCF6570.jpg
+2024-05-25 12:15:49,258 - api.getallmeta - DEBUG - getallmeta function called
+2024-05-25 12:15:49,262 - api.getallmeta - DEBUG - Full path: uploaded_files/ce3f9cf353c50813b3f51f495fa2fd31
+2024-05-25 12:15:49,512 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1644.jpg
+2024-05-25 12:15:49,657 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1596.jpg
+2024-05-25 12:15:49,801 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1634.jpg
+2024-05-25 12:15:49,943 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1581.jpg
+2024-05-25 12:15:50,090 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1576.jpg
+2024-05-25 12:25:55,777 - api.getallmeta - DEBUG - getallmeta function called
+2024-05-25 12:25:55,781 - api.getallmeta - DEBUG - Full path: uploaded_files/ef6ec40ff39a175738e8ae994fbe9103
+2024-05-25 12:25:55,987 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1596.jpg
+2024-05-25 12:25:56,133 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1634.jpg
+2024-05-25 12:25:56,294 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1581.jpg
+2024-05-25 12:25:56,437 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1567.jpg
+2024-05-25 12:25:56,582 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1564.jpg
+2024-05-25 12:25:56,727 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1576.jpg
+2024-05-25 12:26:37,556 - api.getallmeta - DEBUG - getallmeta function called
+2024-05-25 12:26:37,560 - api.getallmeta - DEBUG - Full path: uploaded_files/c0a56a38ee7e23d4e89d39455a59bc4b
+2024-05-25 12:26:37,782 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1142.jpg
+2024-05-25 12:26:37,986 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1368.jpg
+2024-05-25 12:26:38,141 - api.getallmeta - DEBUG - Metadata retrieved successfully for z602.jpg
+2024-05-25 12:26:38,299 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1378.jpg
+2024-05-25 12:26:38,456 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1185.jpg
+2024-05-25 12:26:38,610 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1163.jpg
+2024-05-25 12:26:38,765 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1564.jpg
+2024-05-25 12:26:38,918 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1067.jpg
+2024-05-25 12:32:11,069 - api.getallmeta - DEBUG - getallmeta function called
+2024-05-25 12:32:11,071 - api.getallmeta - DEBUG - Full path: uploaded_files/a7436b9bf713802796598f2afb102825
+2024-05-25 12:32:11,303 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1644.jpg
+2024-05-25 12:32:11,449 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1596.jpg
+2024-05-25 12:32:11,598 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1634.jpg
+2024-05-25 12:32:11,748 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1797.jpg
+2024-05-25 12:32:11,894 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1581.jpg
+2024-05-25 12:32:12,035 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1576.jpg
+2024-05-25 12:34:42,037 - api.getallmeta - DEBUG - getallmeta function called
+2024-05-25 12:34:42,039 - api.getallmeta - DEBUG - Full path: uploaded_files/1ed0a96d1afe2a50d8e5cf14db975e0b
+2024-05-25 12:34:42,253 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1644.jpg
+2024-05-25 12:34:42,439 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1634.jpg
+2024-05-25 12:34:42,612 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1797.jpg

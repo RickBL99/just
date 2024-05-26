@@ -107,3 +107,6 @@
 2024-05-25 15:39:18,462 - api.getallmeta - DEBUG - getallmeta function called
 2024-05-25 15:39:18,466 - api.getallmeta - DEBUG - Full path: uploaded_files/0296e7efaf544afa76a5dea9e552bb2c
 2024-05-25 15:39:18,804 - api.getallmeta - DEBUG - Metadata retrieved successfully for z2089.jpg
+2024-05-25 18:01:19,571 - api.getallmeta - DEBUG - getallmeta function called
+2024-05-25 18:01:19,576 - api.getallmeta - DEBUG - Full path: uploaded_files/09ac5879dd25166384c66302d6d8068b
+2024-05-25 18:01:19,869 - api.getallmeta - DEBUG - Metadata retrieved successfully for z1634.jpg

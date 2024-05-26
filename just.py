@@ -4,7 +4,7 @@ import os
 import platform
 import secrets
 import logging
-from fastapi import FastAPI, Request, Response
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
@@ -40,9 +40,6 @@ api.mount('/static', StaticFiles(directory='static'), name='static')
 logging.debug("Mounting uploaded_files directory")
 api.mount("/uploaded_files", StaticFiles(directory='uploaded_files'), name="uploaded_files")
 
-print(os.path.abspath('static/logo.png'))
-
-# APPLICATION API
 @api.get("/")
 def form_post(request: Request):
     session_id = secrets.token_hex(16)
@@ -63,19 +60,33 @@ def form_post(request: Request):
 
 @api.get("/result", response_class=HTMLResponse)
 async def index(request: Request):
-    filename = "test.jpg"
+    filename = "z2084.jpg"  # Example filename, change it to the actual file you are working with
 
     # Determine the path to exiftool
+    def is_executable(path):
+        return os.path.isfile(path) and os.access(path, os.X_OK)
+
     exiftool_path = "exiftool"  # Default to using the system-installed exiftool
-    if not os.path.isfile(exiftool_path) or not os.access(exiftool_path, os.X_OK):
+    if not is_executable(exiftool_path):
         exiftool_path = os.path.join(current_dir, "tools", "exiftool")
         # Ensure exiftool is executable
         if platform.system() != "Windows":
             subprocess.run(["chmod", "+x", exiftool_path])
 
+    # Check if the file exists
+    file_path = os.path.join(current_dir, "static", filename)
+    if not os.path.isfile(file_path):
+        logging.error(f"File {file_path} does not exist")
+        return HTMLResponse(content=f"Error: File {file_path} does not exist", status_code=404)
+
     logging.info(f"Using exiftool path: {exiftool_path}")
-    logging.info(f"Running exiftool command on file {filename}")
-    exiftool_output = subprocess.check_output([exiftool_path, "-j", f"static/{filename}"])
+    logging.info(f"Running exiftool command on file {file_path}")
+
+    try:
+        exiftool_output = subprocess.check_output([exiftool_path, "-j", file_path])
+    except subprocess.CalledProcessError as e:
+        logging.error(f"Exiftool error: {e.output.decode()}")
+        return HTMLResponse(content=f"Error: Exiftool failed to retrieve metadata", status_code=500)
     
     exif_data = json.loads(exiftool_output)
     

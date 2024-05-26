@@ -16,6 +16,30 @@ from PIL import Image
 router = APIRouter()
 templates = Jinja2Templates(directory="templates/")
 
+# Create logger object
+logger = logging.getLogger(__name__)
+
+# Set logger level
+logger.setLevel(logging.DEBUG)
+
+# Create console handler and set level to debug
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+
+# Create formatter
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# Add formatter to console handler
+ch.setFormatter(formatter)
+
+# Add console handler to logger
+logger.addHandler(ch)
+
+fh = logging.FileHandler('mylog.log')
+fh.setLevel(logging.DEBUG)
+fh.setFormatter(formatter)
+logger.addHandler(fh)
+
 
 def configure_logging():
     logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(levelname)s %(message)s')
@@ -46,24 +70,24 @@ def create_session_directory(session_id: str) -> Tuple[str, str]:
 async def upload_files(request: Request, files: List[UploadFile] = File(..., max_size=100000000)):
     # Get the session ID from the request cookies
     session_id = request.cookies.get('session_id')
-    logging.info(f"Session ID retrieved from request cookies: {session_id}")
+    logger.debug(f"Session ID retrieved from request cookies: {session_id}")
 
     # Create a directory for the session_id
     upload_dir, _ = create_session_directory(session_id)
-    logging.info(f"Directory created for session ID {session_id} at {upload_dir}")
+    logger.debug(f"Directory created for session ID {session_id} at {upload_dir}")
 
-    logging.info("Starting file upload")
+    logger.debug("Starting file upload")
 
     # Safely change directories using a context manager
     with change_directory(os.getcwd()):
         for file in files:
             contents = await file.read()
             time.sleep(1)  # Simulate processing delay
-            logging.info(f"Received file {file.filename}")
+            logger.debug(f"Received file {file.filename}")
             with open(os.path.join(str(upload_dir), file.filename), "wb") as f:
                 f.write(contents)
 
-    logging.info("File upload complete")
+    logger.debug("File upload complete")
 
     return templates.TemplateResponse('upload.html', context={'request': request}, headers={'Cache-Control': 'no-cache'})
 

@@ -42,7 +42,10 @@ async def getallmeta(request: Request, image_number: str = Query(None)):
     session_id = request.cookies.get("session_id")
     fullpath = os.path.join("uploaded_files", session_id)
 
+
+    logger.debug("THE FULL PATH IS BELOW!!!")
     logger.debug(f"Full path: {fullpath}")
+    logger.debug("THE FULL PATH IS ABOVE!!!")
 
     if not os.path.exists(fullpath):
         return templates.TemplateResponse('error.html', context={'request': request, 'error_message': "Please upload some images to get started."}, status_code=404, media_type='text/html')

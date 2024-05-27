@@ -41,17 +41,32 @@
             background-color: #e9f7e9;
             border-color: #28a745;
         }
-        .loading-indicator {
+        .loading-overlay {
             display: none;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2rem;
-            color: #28a745;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
         }
-        .drop-area.active .loading-indicator {
-            display: block;
+        .loading-overlay .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #28a745;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .drop-area.active .loading-overlay {
+            display: flex;
         }
         .btn {
             margin-top: 20px;
@@ -91,8 +106,8 @@
                     <div id="drop-area" class="drop-area">
                         <p class="text-center mb-0">Drag and drop or <b>click</b> to select a file(s). Uploading will begin within 10 seconds. Please wait for the <b>green bar</b> to appear - which can take a while for larger files. If you receive a red warning bar, please upload fewer files at once.</p>
                         <input type="file" id="file-input" class="d-none" multiple>
-                        <div class="loading-indicator">
-                            <i class="fas fa-spinner fa-spin"></i>
+                        <div class="loading-overlay">
+                            <div class="spinner"></div>
                         </div>
                     </div>
                     <div class="text-center mt-3">
@@ -114,7 +129,7 @@
         </div>
         <footer>
             <p>Brought to you by your friends at SuperStock. Interested in licensing your content? <a href="https://superstock.com">Let's talk!</a></p>
-            <p style="font-style: italic; color: #999;">V1.9d Any issues, comments, concerns, just want to say hello? <a href="mailto:info@justthemeta.com?subject=JustTheMeta%20Feedback">Click here</a>.</p>
+            <p style="font-style: italic; color: #999;">V1.33y Any issues, comments, concerns, just want to say hello? <a href="mailto:info@justthemeta.com?subject=JustTheMeta%20Feedback">Click here</a>.</p>
         </footer>
     </div>
     
@@ -157,7 +172,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
         var dropArea = document.getElementById('drop-area');
-        var loadingIndicator = document.querySelector('.loading-indicator');
+        var loadingOverlay = document.querySelector('.loading-overlay');
         
         ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
             dropArea.addEventListener(eventName, preventDefaults, false);
@@ -170,17 +185,16 @@
         
         dropArea.addEventListener('dragenter', () => {
             dropArea.classList.add('active');
-            loadingIndicator.style.display = 'block';
         });
         
         dropArea.addEventListener('dragleave', () => {
             dropArea.classList.remove('active');
-            loadingIndicator.style.display = 'none';
+            loadingOverlay.style.display = 'none';
         });
         
         dropArea.addEventListener('drop', (e) => {
             dropArea.classList.remove('active');
-            loadingIndicator.style.display = 'block';
+            loadingOverlay.style.display = 'flex';
             handleDrop(e);
         });
         
@@ -193,7 +207,7 @@
         function handleFiles(files) {
             if (files.length > 30) {
                 $('#error-modal').modal('show');
-                loadingIndicator.style.display = 'none';
+                loadingOverlay.style.display = 'none';
                 return;
             }
             
@@ -211,7 +225,7 @@
                 } else {
                     document.getElementById("status").innerHTML = '<div class="alert alert-danger" role="alert">Error uploading file(s)! Please reload page and try again.</div>';
                 }
-                loadingIndicator.style.display = 'none';
+                loadingOverlay.style.display = 'none';
             });
             xhr.send(formData);
         }
@@ -235,4 +249,3 @@
     </script>
 </body>
 </html>
-

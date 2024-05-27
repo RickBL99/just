@@ -43,66 +43,81 @@ api.mount("/uploaded_files", StaticFiles(directory='uploaded_files'), name="uplo
 @api.get("/")
 def form_post(request: Request):
     session_id = secrets.token_hex(16)
-    logging.info(f"Generated session ID: {session_id}")
+    logging.debug(f"Generated session ID: {session_id}")
     try:
         headers = {"Set-Cookie": f"session_id={session_id}; Max-Age=3600; Path=/"}
     except Exception as e:
-        logging.error(f"Error adding cookie: {e}")
+        logging.debug(f"Error adding cookie: {e}")
 
-    logging.info("Added the cookie.")
-    logging.info(f"Session ID: {session_id}")
+    logging.debug("Added the cookie.")
+    logging.debug(f"Session ID: {session_id}")
 
     cookie_value = request.cookies.get('session_id')
-    logging.info(f"Cookie value: {cookie_value}")
-    logging.info(f"Cookie exists: {cookie_value is not None}")
+    logging.debug(f"Cookie value: {cookie_value}")
+    logging.debug(f"Cookie exists: {cookie_value is not None}")
 
     return templates.TemplateResponse("upload.html", {"request": request}, headers=headers)
 
+import time
 
-@api.post("/result", response_class=HTMLResponse)
-async def index(request: Request, file: UploadFile = File(...)):
-    # Save the uploaded file
-    upload_dir = os.path.join(current_dir, "uploaded_files")
-    os.makedirs(upload_dir, exist_ok=True)
-    file_path = os.path.join(upload_dir, file.filename)
-    with open(file_path, "wb") as buffer:
-        buffer.write(await file.read())
+# @api.post("/result", response_class=HTMLResponse)
+# async def index(request: Request, file: UploadFile = File(...)):
+#     # Save the uploaded file
+#     upload_dir = os.path.join(current_dir, "uploaded_files")
+#     os.makedirs(upload_dir, exist_ok=True)
+#     file_path = os.path.join(upload_dir, file.filename)
+    
+#     logging.debug(f"Saving file to: {file_path}")
+#     with open(file_path, "wb") as buffer:
+#         buffer.write(await file.read())
+    
+#     logging.debug(f"File {file.filename} saved successfully")
 
-    # Determine the path to exiftool
-    def is_executable(path):
-        return os.path.isfile(path) and os.access(path, os.X_OK)
+#     # Add a 5-second delay
+#     logging.debug("Waiting for 5 seconds to ensure file is fully saved")
+#     time.sleep(5)
+#     logging.debug("Completed waiting for 5 seconds")
 
-    exiftool_path = "exiftool"  # Default to using the system-installed exiftool
-    if not is_executable(exiftool_path):
-        exiftool_path = os.path.join(current_dir, "tools", "exiftool")
-        # Ensure exiftool is executable
-        if platform.system() != "Windows":
-            subprocess.run(["chmod", "+x", exiftool_path])
+#     # Check if the file exists
+#     if not os.path.isfile(file_path):
+#         logging.debug(f"File {file_path} does not exist after 5 seconds")
+#         return HTMLResponse(content=f"Error: File {file_path} does not exist", status_code=404)
+    
+#     logging.debug(f"File {file_path} confirmed to exist")
 
-    # Check if the file exists
-    if not os.path.isfile(file_path):
-        logging.error(f"File {file_path} does not exist")
-        return HTMLResponse(content=f"Error: File {file_path} does not exist", status_code=404)
+#     # Determine the path to exiftool
+#     def is_executable(path):
+#         return os.path.isfile(path) and os.access(path, os.X_OK)
 
-    logging.info(f"Using exiftool path: {exiftool_path}")
-    logging.info(f"Running exiftool command on file {file_path}")
+#     exiftool_path = "exiftool"  # Default to using the system-installed exiftool
+#     if not is_executable(exiftool_path):
+#         exiftool_path = os.path.join(current_dir, "tools", "exiftool")
+#         # Ensure exiftool is executable
+#         if platform.system() != "Windows":
+#             subprocess.run(["chmod", "+x", exiftool_path])
 
-    try:
-        exiftool_output = subprocess.check_output([exiftool_path, "-j", file_path])
-    except subprocess.CalledProcessError as e:
-        logging.error(f"Exiftool error: {e.output.decode()}")
-        return HTMLResponse(content=f"Error: Exiftool failed to retrieve metadata", status_code=500)
+#     logging.debug(f"Using exiftool path: {exiftool_path}")
+#     logging.debug(f"Running exiftool command on file {file_path}")
 
-    exif_data = json.loads(exiftool_output)
+#     try:
+#         exiftool_output = subprocess.check_output([exiftool_path, "-j", file_path])
+#     except subprocess.CalledProcessError as e:
+#         logging.debug(f"Exiftool error: {e.output.decode()}")
+#         return HTMLResponse(content=f"Error: Exiftool failed to retrieve metadata", status_code=500)
 
-    table_rows = ""
-    for item in exif_data[0].items():
-        table_rows += f"<tr><td>{item[0]}</td><td>{item[1]}</td></tr>"
-    table_html = f"<table class='table'>{table_rows}</table>"
+#     exif_data = json.loads(exiftool_output)
 
-    return templates.TemplateResponse("index.html", {"request": request, "table_html": table_html, "filename": file.filename})
+#     table_rows = ""
+#     for item in exif_data[0].items():
+#         table_rows += f"<tr><td>{item[0]}</td><td>{item[1]}</td></tr>"
+#     table_html = f"<table class='table'>{table_rows}</table>"
+
+#     logging.debug("Metadata extraction successful")
+
+#     return templates.TemplateResponse("index.html", {"request": request, "table_html": table_html, "filename": file.filename})
 
 
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run("just:api", host="0.0.0.0", port=8000)
+

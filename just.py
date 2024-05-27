@@ -58,6 +58,8 @@ def form_post(request: Request):
 
     return templates.TemplateResponse("upload.html", {"request": request}, headers=headers)
 
+
+
 @api.get("/result", response_class=HTMLResponse)
 async def index(request: Request):
     filename = "z2084.jpg"  # Example filename, change it to the actual file you are working with

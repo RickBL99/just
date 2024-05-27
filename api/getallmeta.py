@@ -51,10 +51,6 @@ async def getallmeta(request: Request, image_number: str = Query(None)):
     logger.debug(f"Full path: {fullpath}")
     logger.debug("THE FULL PATH IS ABOVE!!!")
 
-    logger.debug("Waiting for 5 seconds to see if file path shows up.")
-    time.sleep(5)
-    logger.debug("Completed waiting for 5 seconds")
-
     if not os.path.exists(fullpath):
         return templates.TemplateResponse('error.html', context={'request': request, 'error_message': "Please upload some images to get started."}, status_code=404, media_type='text/html')
 

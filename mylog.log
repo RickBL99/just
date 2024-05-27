@@ -570,3 +570,19 @@
 2024-05-27 11:54:38,339 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_0102.JPG
 2024-05-27 11:54:38,666 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_0101.JPG
 2024-05-27 11:54:38,994 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_0099.JPG
+2024-05-27 12:15:55,592 - api.upload - DEBUG - Session ID retrieved from request cookies: 2c17660d500db27e1e62e70ad3cfbf7d
+2024-05-27 12:15:55,598 - api.upload - DEBUG - Directory created for session ID 2c17660d500db27e1e62e70ad3cfbf7d at /Users/rick/Documents/GitHub/just/uploaded_files/2c17660d500db27e1e62e70ad3cfbf7d
+2024-05-27 12:15:55,599 - api.upload - DEBUG - Starting file upload
+2024-05-27 12:15:56,602 - api.upload - DEBUG - Received file 174.jpg
+2024-05-27 12:15:56,604 - api.upload - DEBUG - File upload complete
+2024-05-27 12:16:07,675 - api.getallmeta - DEBUG - Waiting for 5 seconds before getting cookie.
+2024-05-27 12:16:12,678 - api.getallmeta - DEBUG - Completed waiting for 5 seconds
+2024-05-27 12:16:12,678 - api.getallmeta - DEBUG - getallmeta function called!
+2024-05-27 12:16:12,679 - api.getallmeta - DEBUG - THE FULL PATH IS BELOW!!!
+2024-05-27 12:16:12,679 - api.getallmeta - DEBUG - Full path: uploaded_files/2c17660d500db27e1e62e70ad3cfbf7d
+2024-05-27 12:16:12,679 - api.getallmeta - DEBUG - THE FULL PATH IS ABOVE!!!
+2024-05-27 12:16:12,679 - api.getallmeta - DEBUG - Waiting for 5 seconds to see if file path shows up.
+2024-05-27 12:16:17,680 - api.getallmeta - DEBUG - Completed waiting for 5 seconds
+2024-05-27 12:16:17,681 - api.getallmeta - DEBUG - Waiting for 5 seconds to ensure all files are available
+2024-05-27 12:16:22,683 - api.getallmeta - DEBUG - Completed waiting for 5 seconds
+2024-05-27 12:16:22,975 - api.getallmeta - DEBUG - Metadata retrieved successfully for 174.jpg

@@ -4,7 +4,7 @@ import os
 import platform
 import secrets
 import logging
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, UploadFile, File
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
@@ -59,10 +59,14 @@ def form_post(request: Request):
     return templates.TemplateResponse("upload.html", {"request": request}, headers=headers)
 
 
-
-@api.get("/result", response_class=HTMLResponse)
-async def index(request: Request):
-    filename = "z2084.jpg"  # Example filename, change it to the actual file you are working with
+@api.post("/result", response_class=HTMLResponse)
+async def index(request: Request, file: UploadFile = File(...)):
+    # Save the uploaded file
+    upload_dir = os.path.join(current_dir, "uploaded_files")
+    os.makedirs(upload_dir, exist_ok=True)
+    file_path = os.path.join(upload_dir, file.filename)
+    with open(file_path, "wb") as buffer:
+        buffer.write(await file.read())
 
     # Determine the path to exiftool
     def is_executable(path):
@@ -76,7 +80,6 @@ async def index(request: Request):
             subprocess.run(["chmod", "+x", exiftool_path])
 
     # Check if the file exists
-    file_path = os.path.join(current_dir, "static", filename)
     if not os.path.isfile(file_path):
         logging.error(f"File {file_path} does not exist")
         return HTMLResponse(content=f"Error: File {file_path} does not exist", status_code=404)
@@ -89,15 +92,16 @@ async def index(request: Request):
     except subprocess.CalledProcessError as e:
         logging.error(f"Exiftool error: {e.output.decode()}")
         return HTMLResponse(content=f"Error: Exiftool failed to retrieve metadata", status_code=500)
-    
+
     exif_data = json.loads(exiftool_output)
-    
+
     table_rows = ""
     for item in exif_data[0].items():
         table_rows += f"<tr><td>{item[0]}</td><td>{item[1]}</td></tr>"
     table_html = f"<table class='table'>{table_rows}</table>"
-    
-    return templates.TemplateResponse("index.html", {"request": request, "table_html": table_html, "filename": filename})
+
+    return templates.TemplateResponse("index.html", {"request": request, "table_html": table_html, "filename": file.filename})
+
 
 if __name__ == '__main__':
     import uvicorn

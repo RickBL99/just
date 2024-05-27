@@ -38,7 +38,11 @@ templates = Jinja2Templates(directory="templates/")
 @router.post('/api/getallmeta')
 async def getallmeta(request: Request, image_number: str = Query(None)):
 
-    logger.debug("getallmeta function called")
+    logger.debug("Waiting for 5 seconds before getting cookie.")
+    time.sleep(5)
+    logger.debug("Completed waiting for 5 seconds")
+
+    logger.debug("getallmeta function called!")
 
     session_id = request.cookies.get("session_id")
     fullpath = os.path.join("uploaded_files", session_id)
@@ -46,6 +50,10 @@ async def getallmeta(request: Request, image_number: str = Query(None)):
     logger.debug("THE FULL PATH IS BELOW!!!")
     logger.debug(f"Full path: {fullpath}")
     logger.debug("THE FULL PATH IS ABOVE!!!")
+
+    logger.debug("Waiting for 5 seconds to see if file path shows up.")
+    time.sleep(5)
+    logger.debug("Completed waiting for 5 seconds")
 
     if not os.path.exists(fullpath):
         return templates.TemplateResponse('error.html', context={'request': request, 'error_message': "Please upload some images to get started."}, status_code=404, media_type='text/html')

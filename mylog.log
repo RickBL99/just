@@ -552,3 +552,21 @@
 2024-05-27 11:39:00,198 - api.getallmeta - DEBUG - Metadata retrieved successfully for 013182.jpg
 2024-05-27 11:39:00,415 - api.getallmeta - DEBUG - Metadata retrieved successfully for 012600.jpg
 2024-05-27 11:39:00,619 - api.getallmeta - DEBUG - Metadata retrieved successfully for 009187.jpg
+2024-05-27 11:54:26,733 - api.upload - DEBUG - Session ID retrieved from request cookies: a88d2f97aa0355f6708ad0b5e3fde29f
+2024-05-27 11:54:26,734 - api.upload - DEBUG - Directory created for session ID a88d2f97aa0355f6708ad0b5e3fde29f at /Users/rick/Documents/GitHub/just/uploaded_files/a88d2f97aa0355f6708ad0b5e3fde29f
+2024-05-27 11:54:26,734 - api.upload - DEBUG - Starting file upload
+2024-05-27 11:54:27,742 - api.upload - DEBUG - Received file IMG_0099.JPG
+2024-05-27 11:54:28,760 - api.upload - DEBUG - Received file IMG_0101.JPG
+2024-05-27 11:54:29,772 - api.upload - DEBUG - Received file IMG_0102.JPG
+2024-05-27 11:54:30,781 - api.upload - DEBUG - Received file IMG_0103.JPG
+2024-05-27 11:54:30,786 - api.upload - DEBUG - File upload complete
+2024-05-27 11:54:32,603 - api.getallmeta - DEBUG - getallmeta function called
+2024-05-27 11:54:32,604 - api.getallmeta - DEBUG - THE FULL PATH IS BELOW!!!
+2024-05-27 11:54:32,605 - api.getallmeta - DEBUG - Full path: uploaded_files/a88d2f97aa0355f6708ad0b5e3fde29f
+2024-05-27 11:54:32,605 - api.getallmeta - DEBUG - THE FULL PATH IS ABOVE!!!
+2024-05-27 11:54:32,605 - api.getallmeta - DEBUG - Waiting for 5 seconds to ensure all files are available
+2024-05-27 11:54:37,609 - api.getallmeta - DEBUG - Completed waiting for 5 seconds
+2024-05-27 11:54:38,013 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_0103.JPG
+2024-05-27 11:54:38,339 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_0102.JPG
+2024-05-27 11:54:38,666 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_0101.JPG
+2024-05-27 11:54:38,994 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_0099.JPG

@@ -586,3 +586,31 @@
 2024-05-27 12:16:17,681 - api.getallmeta - DEBUG - Waiting for 5 seconds to ensure all files are available
 2024-05-27 12:16:22,683 - api.getallmeta - DEBUG - Completed waiting for 5 seconds
 2024-05-27 12:16:22,975 - api.getallmeta - DEBUG - Metadata retrieved successfully for 174.jpg
+2024-05-27 17:21:54,148 - api.upload - DEBUG - Session ID retrieved from request cookies: 2dbddeda6c5b05609052048dec02381a
+2024-05-27 17:21:54,168 - api.upload - DEBUG - Directory created for session ID 2dbddeda6c5b05609052048dec02381a at /Users/rick/Documents/GitHub/just/uploaded_files/2dbddeda6c5b05609052048dec02381a
+2024-05-27 17:21:54,168 - api.upload - DEBUG - Starting file upload
+2024-05-27 17:21:55,172 - api.upload - DEBUG - Received file 5513-51495776.jpg
+2024-05-27 17:21:56,175 - api.upload - DEBUG - Received file 5513-51495777.jpg
+2024-05-27 17:21:57,180 - api.upload - DEBUG - Received file 5513-51495778.jpg
+2024-05-27 17:21:58,185 - api.upload - DEBUG - Received file 5513-51495779.jpg
+2024-05-27 17:21:59,189 - api.upload - DEBUG - Received file 5513-51495780.jpg
+2024-05-27 17:22:00,191 - api.upload - DEBUG - Received file 5513-51495781.jpg
+2024-05-27 17:22:01,193 - api.upload - DEBUG - Received file 5513-51495782.jpg
+2024-05-27 17:22:02,195 - api.upload - DEBUG - Received file 5513-51495783.jpg
+2024-05-27 17:22:03,200 - api.upload - DEBUG - Received file 5513-51495784.jpg
+2024-05-27 17:22:04,202 - api.upload - DEBUG - Received file 5513-51495785.jpg
+2024-05-27 17:22:05,205 - api.upload - DEBUG - Received file 5513-51495786.jpg
+2024-05-27 17:22:06,210 - api.upload - DEBUG - Received file 5513-51495787.jpg
+2024-05-27 17:22:06,212 - api.upload - DEBUG - File upload complete
+2024-05-27 17:33:38,261 - api.upload - DEBUG - Session ID retrieved from request cookies: 44b2dad807acae89b3096158f11b1280
+2024-05-27 17:33:38,280 - api.upload - DEBUG - Directory created for session ID 44b2dad807acae89b3096158f11b1280 at /Users/rick/Documents/GitHub/just/uploaded_files/44b2dad807acae89b3096158f11b1280
+2024-05-27 17:33:38,280 - api.upload - DEBUG - Starting file upload
+2024-05-27 17:33:39,287 - api.upload - DEBUG - Received file 5513-51495779.jpg
+2024-05-27 17:33:40,292 - api.upload - DEBUG - Received file 5513-51495780.jpg
+2024-05-27 17:33:41,297 - api.upload - DEBUG - Received file 5513-51495781.jpg
+2024-05-27 17:33:42,299 - api.upload - DEBUG - Received file 5513-51495782.jpg
+2024-05-27 17:33:43,304 - api.upload - DEBUG - Received file 5513-51495783.jpg
+2024-05-27 17:33:44,305 - api.upload - DEBUG - Received file 5513-51495784.jpg
+2024-05-27 17:33:45,306 - api.upload - DEBUG - Received file 5513-51495785.jpg
+2024-05-27 17:33:46,312 - api.upload - DEBUG - Received file 5513-51495786.jpg
+2024-05-27 17:33:46,314 - api.upload - DEBUG - File upload complete

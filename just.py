@@ -8,6 +8,7 @@ from fastapi import FastAPI, Request, UploadFile, File
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+import time
 
 api = FastAPI()
 templates = Jinja2Templates(directory="templates")
@@ -49,21 +50,43 @@ api.mount("/uploaded_files", StaticFiles(directory='uploaded_files'), name="uplo
 def form_post(request: Request):
     session_id = secrets.token_hex(16)
     logging.debug(f"Generated session ID: {session_id}")
-    try:
-        headers = {"Set-Cookie": f"session_id={session_id}; Max-Age=3600; Path=/"}
-    except Exception as e:
-        logging.debug(f"Error adding cookie: {e}")
 
-    logging.debug("Added the cookie.")
-    logging.debug(f"Session ID: {session_id}")
+    headers = {"Set-Cookie": f"session_id={session_id}; Max-Age=3600; Path=/"}
 
+    response = templates.TemplateResponse("upload.html", {"request": request})
+    response.headers["Set-Cookie"] = f"session_id={session_id}; Max-Age=3600; Path=/"
+
+    # Log the details about the cookie set
     cookie_value = request.cookies.get('session_id')
-    logging.debug(f"Cookie value: {cookie_value}")
-    logging.debug(f"Cookie exists: {cookie_value is not None}")
+    logging.debug(f"Cookie value before sending response: {cookie_value}")
+    logging.debug(f"Cookie exists before sending response: {cookie_value is not None}")
 
-    return templates.TemplateResponse("upload.html", {"request": request}, headers=headers)
+    return response
 
-import time
+@api.get("/check-cookie")
+def check_cookie(request: Request):
+    cookie_value = request.cookies.get('session_id')
+    logging.debug(f"Cookie value on subsequent request: {cookie_value}")
+    logging.debug(f"Cookie exists on subsequent request: {cookie_value is not None}")
+
+    return {"cookie_value": cookie_value, "cookie_exists": cookie_value is not None}
+
+@api.get("/file-check", response_class=HTMLResponse)
+def file_check(request: Request):
+    session_id = request.cookies.get('session_id')
+    if not session_id:
+        return templates.TemplateResponse("file_check.html", {"request": request, "files": [], "error": "No session ID found."})
+
+    directory_path = os.path.join("uploaded_files", session_id)
+    if not os.path.exists(directory_path):
+        return templates.TemplateResponse("file_check.html", {"request": request, "files": [], "error": f"No files found for session ID: {session_id}"})
+
+    files = os.listdir(directory_path)
+    logging.debug(f"Files in session directory {directory_path}: {files}")
+
+    return templates.TemplateResponse("file_check.html", {"request": request, "files": files, "error": None})
+
+
 
 @api.post("/result", response_class=HTMLResponse)
 async def index(request: Request, file: UploadFile = File(...)):

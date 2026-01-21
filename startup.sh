@@ -1,10 +1,7 @@
 #!/bin/bash
-# Install Perl and CPANminus
+# Install exiftool via apt (creates the executable)
 apt-get update
-apt-get install -y perl cpanminus
-
-# Install Image::ExifTool module
-cpanm Image::ExifTool
+apt-get install -y libimage-exiftool-perl
 
 # Run the application
 uvicorn just:api --host 0.0.0.0 --port 8000

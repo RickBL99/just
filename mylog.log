@@ -614,3 +614,29 @@
 2024-05-27 17:33:45,306 - api.upload - DEBUG - Received file 5513-51495785.jpg
 2024-05-27 17:33:46,312 - api.upload - DEBUG - Received file 5513-51495786.jpg
 2024-05-27 17:33:46,314 - api.upload - DEBUG - File upload complete
+2026-01-21 14:23:29,978 - api.upload - DEBUG - Session ID retrieved from request cookies: 92e880c6defc264923e970c09ba4f227
+2026-01-21 14:23:29,979 - api.upload - DEBUG - Directory created for session ID 92e880c6defc264923e970c09ba4f227 at /Applications/just/uploaded_files/92e880c6defc264923e970c09ba4f227
+2026-01-21 14:23:29,979 - api.upload - DEBUG - Starting file upload
+2026-01-21 14:23:30,986 - api.upload - DEBUG - Received file 6176_142178.jpg
+2026-01-21 14:23:31,995 - api.upload - DEBUG - Received file 6176_163873.jpg
+2026-01-21 14:23:33,004 - api.upload - DEBUG - Received file 6176_183103.jpg
+2026-01-21 14:23:34,013 - api.upload - DEBUG - Received file 6176_242282.jpg
+2026-01-21 14:23:35,026 - api.upload - DEBUG - Received file 6176_243862.jpg
+2026-01-21 14:23:36,036 - api.upload - DEBUG - Received file 6176_246062.jpg
+2026-01-21 14:23:37,048 - api.upload - DEBUG - Received file 6176_250153.jpg
+2026-01-21 14:23:37,053 - api.upload - DEBUG - File upload complete
+2026-01-21 14:23:39,675 - api.getallmeta - DEBUG - Waiting for 5 seconds before getting cookie.
+2026-01-21 14:23:44,680 - api.getallmeta - DEBUG - Completed waiting for 5 seconds
+2026-01-21 14:23:44,681 - api.getallmeta - DEBUG - getallmeta function called!
+2026-01-21 14:23:44,681 - api.getallmeta - DEBUG - THE FULL PATH IS BELOW!!!
+2026-01-21 14:23:44,681 - api.getallmeta - DEBUG - Full path: uploaded_files/92e880c6defc264923e970c09ba4f227
+2026-01-21 14:23:44,682 - api.getallmeta - DEBUG - THE FULL PATH IS ABOVE!!!
+2026-01-21 14:23:44,682 - api.getallmeta - DEBUG - Waiting for 5 seconds to ensure all files are available
+2026-01-21 14:23:49,684 - api.getallmeta - DEBUG - Completed waiting for 5 seconds
+2026-01-21 14:23:49,785 - api.getallmeta - DEBUG - Metadata retrieved successfully for 6176_183103.jpg
+2026-01-21 14:23:49,830 - api.getallmeta - DEBUG - Metadata retrieved successfully for 6176_242282.jpg
+2026-01-21 14:23:49,875 - api.getallmeta - DEBUG - Metadata retrieved successfully for 6176_163873.jpg
+2026-01-21 14:23:49,920 - api.getallmeta - DEBUG - Metadata retrieved successfully for 6176_250153.jpg
+2026-01-21 14:23:49,965 - api.getallmeta - DEBUG - Metadata retrieved successfully for 6176_243862.jpg
+2026-01-21 14:23:50,009 - api.getallmeta - DEBUG - Metadata retrieved successfully for 6176_246062.jpg
+2026-01-21 14:23:50,054 - api.getallmeta - DEBUG - Metadata retrieved successfully for 6176_142178.jpg

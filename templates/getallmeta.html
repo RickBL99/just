@@ -1,103 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta charset="UTF-8">
-    <title>View All Metadata</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metadata — JustTheMeta</title>
     <link rel="shortcut icon" type="image/jpg" href="/favicon.ico"/>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <script src="/static/sorttable.js" type="text/javascript"></script>
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3FL4JDVCC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M3FL4JDVCC');
+    </script>
 
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"> </script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --bg: #F4F1EA;
+            --bg-paper: #FBF9F4;
+            --ink: #0B0B0A;
+            --ink-soft: #4A4844;
+            --ink-mute: #8E8B83;
+            --rule: #1A1A18;
+            --rule-soft: #D9D4C7;
+            --accent: #D9381E;
+            --accent-deep: #A02A14;
+        }
 
+        * { box-sizing: border-box; }
 
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: 'Geist', -apple-system, sans-serif;
+            font-size: 16px;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Subtle grain texture overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.5;
+            z-index: 1;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        /* ============ TOP BAR ============ */
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(244, 241, 234, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--rule-soft);
+        }
+
+        .topbar-inner {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .back-link {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--ink);
+            text-decoration: none;
+            padding: 10px 16px;
+            border: 1px solid var(--rule);
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link:hover {
+            background: var(--ink);
+            color: var(--bg-paper);
+        }
+
+        .back-link::before {
+            content: "←";
+            font-family: 'Geist', sans-serif;
+            font-size: 14px;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 80px 40px 48px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-kicker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .hero-kicker::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background: var(--accent);
+            flex: 0 0 64px;
+        }
+
+        .hero-title {
+            font-family: 'Fraunces', serif;
+            font-weight: 400;
+            font-size: clamp(48px, 8vw, 96px);
+            line-height: 0.95;
+            letter-spacing: -0.02em;
+            margin: 0;
+            font-variation-settings: "opsz" 144, "SOFT" 50;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            font-weight: 300;
+            color: var(--accent);
+        }
+
+        .hero-meta {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--rule-soft);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--ink-soft);
+            letter-spacing: 0.04em;
+        }
+
+        .hero-meta-item span {
+            color: var(--ink-mute);
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* ============ FILE BLOCKS ============ */
+        .files {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 24px 40px 120px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .file-card {
+            background: var(--bg-paper);
+            border: 1px solid var(--rule-soft);
+            margin-bottom: 32px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+        }
+
+        .file-card:nth-child(1) { animation-delay: 0.05s; }
+        .file-card:nth-child(2) { animation-delay: 0.12s; }
+        .file-card:nth-child(3) { animation-delay: 0.19s; }
+        .file-card:nth-child(4) { animation-delay: 0.26s; }
+        .file-card:nth-child(5) { animation-delay: 0.33s; }
+        .file-card:nth-child(n+6) { animation-delay: 0.4s; }
+
+        @keyframes rise {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .file-header {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: end;
+            gap: 24px;
+            padding: 32px 36px 24px;
+            border-bottom: 1px solid var(--rule);
+            background: var(--bg-paper);
+        }
+
+        .file-index {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+            padding-bottom: 6px;
+        }
+
+        .file-index strong {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .file-name {
+            font-family: 'Fraunces', serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: clamp(22px, 3vw, 32px);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin: 0;
+            color: var(--ink);
+            word-break: break-all;
+            font-variation-settings: "opsz" 144;
+        }
+
+        .file-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+            padding-bottom: 8px;
+            white-space: nowrap;
+        }
+
+        /* Metadata table */
+        .meta-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .meta-table tbody tr {
+            border-bottom: 1px solid var(--rule-soft);
+            transition: background 0.15s ease;
+        }
+
+        .meta-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .meta-table tbody tr:hover {
+            background: rgba(217, 56, 30, 0.04);
+        }
+
+        .meta-table td {
+            padding: 14px 36px;
+            vertical-align: top;
+        }
+
+        .meta-table td:first-child {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--ink-soft);
+            width: 38%;
+            text-transform: none;
+            border-right: 1px solid var(--rule-soft);
+            background: rgba(0, 0, 0, 0.015);
+        }
+
+        .meta-table td:last-child {
+            font-family: 'Geist', sans-serif;
+            font-size: 14px;
+            color: var(--ink);
+            line-height: 1.5;
+            word-break: break-word;
+        }
+
+        /* GPS data highlight */
+        .meta-table tbody tr:has(td:first-child:is([data-key^="GPS"])) td:last-child {
+            color: var(--accent-deep);
+        }
+
+        /* ============ EMPTY / FOOTER ============ */
+        .end-rule {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .end-rule-inner {
+            border-top: 1px solid var(--rule);
+            padding: 32px 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 768px) {
+            .topbar-inner { padding: 14px 20px; }
+            .hero { padding: 56px 20px 36px; }
+            .files { padding: 16px 20px 80px; }
+            .file-header {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                padding: 24px 20px 20px;
+                align-items: start;
+            }
+            .file-tag { padding-bottom: 0; }
+            .meta-table td { padding: 12px 20px; font-size: 12px; }
+            .meta-table td:first-child { font-size: 10px; }
+            .hero-meta { gap: 24px; }
+            .end-rule { padding: 0 20px; }
+        }
+    </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M3FL4JDVCC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-M3FL4JDVCC');
-</script>
-
-
-
-<style>
-
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-.btn-sm {
-  padding: 0.15rem 0.30rem;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  border-radius: 0.2rem;
-}
-
-
-
-
-
-
-</style>
-
-
-<br>
-<div style="padding-top: 15px; padding-left:30px">
-
 <body>
-    <h3>View All Metadata</h3>
-    <br>
-    <a href="javascript:history.back()" class="btn btn-primary">Back to list</a>
-    <br>
-    <br>
+
+<header class="topbar">
+    <div class="topbar-inner">
+        <a href="/" class="brand">
+            <span class="brand-dot"></span>
+            JustTheMeta — A SuperStock Tool
+        </a>
+        <a href="javascript:history.back()" class="back-link">Back to files</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-kicker">Extracted Metadata · Report</div>
+    <h1 class="hero-title">View <em>all</em> metadata.</h1>
+    <div class="hero-meta">
+        <div class="hero-meta-item">
+            <span>Files Analyzed</span>
+            {{ all_metadata|length }}
+        </div>
+        <div class="hero-meta-item">
+            <span>Source</span>
+            ExifTool · IPTC · XMP · EXIF
+        </div>
+        <div class="hero-meta-item">
+            <span>Status</span>
+            Complete
+        </div>
+    </div>
+</section>
+
+<main class="files">
     {% for item in all_metadata %}
-    <table>
-        <thead>
-            <tr>
-                <th>Image Number</th>
-                <th>{{ item[0] }}</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for key, value in item[1].items() if key not in ['SourceFile', 'ExifToolVersion', 'FileName', 'Directory'] %}
-            <tr>
-                <td>{{ key }}</td>
-                <td>{{ value }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <br>
+    <article class="file-card">
+        <header class="file-header">
+            <div class="file-index">File <strong>{{ "%03d"|format(loop.index) }}</strong> / {{ "%03d"|format(all_metadata|length) }}</div>
+            <h2 class="file-name">{{ item[0] }}</h2>
+            <div class="file-tag">
+                {% if item[1].MIMEType %}{{ item[1].MIMEType }}{% elif item[1].FileType %}{{ item[1].FileType }}{% else %}Image{% endif %}
+            </div>
+        </header>
+        <table class="meta-table">
+            <tbody>
+                {% for key, value in item[1].items() if key not in ['SourceFile', 'ExifToolVersion', 'FileName', 'Directory', 'gps_data'] %}
+                <tr>
+                    <td data-key="{{ key }}">{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </article>
     {% endfor %}
+</main>
+
+<div class="end-rule">
+    <div class="end-rule-inner">
+        <span>© SuperStock · JustTheMeta v3.1.1</span>
+        <span>End of report</span>
+    </div>
+</div>
+
 </body>
 </html>
-
-
-
-
-

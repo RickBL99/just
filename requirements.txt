@@ -1,30 +1,69 @@
-aiofiles
-fastapi
-msrest
-oauth2client
-openpyxl
-pandas
-Pillow
-pyodbc
-requests
-schedule
-starlette
-tinys3
-uvicorn
-xlrd
-azure-storage-blob
-azure-cognitiveservices-vision-computervision
-python-multipart
-azure-storage-file-share
-uvloop
-httptools
-azure-storage-queue
-xlsxwriter
-opencv-python
-nltk
-ftputil
-iptcinfo3
-python-xmp-toolkit
-piexif
-exifread
-python-multipart
+# =============================================================
+# Web framework — PIN THESE.
+# Starlette 1.0 (Mar 2026) removed the deprecated
+# TemplateResponse("name", {"request": request}) signature.
+# Keeping the pre-1.0 line until just.py / etc. are migrated.
+# =============================================================
+fastapi>=0.115.0,<0.128.3
+starlette>=0.40.0,<1.0.0
+uvicorn[standard]>=0.30.0
+uvloop>=0.19.0
+httptools>=0.6.0
+python-multipart>=0.0.9
+aiofiles>=23.2.1
+jinja2>=3.1.4
+
+# =============================================================
+# Data / docs
+# =============================================================
+pandas>=2.2.0
+openpyxl>=3.1.2
+xlrd>=2.0.1
+xlsxwriter>=3.2.0
+Pillow>=10.3.0
+opencv-python>=4.9.0
+nltk>=3.9.0
+
+# =============================================================
+# Image metadata (your core tool)
+# NOTE: python-xmp-toolkit needs the `exempi` system library.
+# On Azure App Service for Linux add to startup.sh:
+#   apt-get update && apt-get install -y libexempi-dev exempi
+# Otherwise it imports fine but throws at runtime.
+# =============================================================
+piexif>=1.1.3
+exifread>=3.0.0
+iptcinfo3>=2.1.4
+python-xmp-toolkit>=2.0.2
+
+# =============================================================
+# Azure
+# =============================================================
+azure-storage-blob>=12.19.0
+azure-storage-file-share>=12.15.0
+azure-storage-queue>=12.9.0
+azure-cognitiveservices-vision-computervision>=0.9.0
+msrest>=0.7.1
+
+# =============================================================
+# Database / network
+# =============================================================
+pyodbc>=5.1.0
+requests>=2.32.0
+ftputil>=5.1.0
+schedule>=1.2.1
+
+# =============================================================
+# ⚠️  DEPRECATED — REPLACE WHEN YOU CAN
+# =============================================================
+# tinys3: last release 2014. Won't install cleanly on Py 3.12
+#         in many environments. If you actually upload to S3,
+#         migrate to `boto3` or `aioboto3`.
+# tinys3
+
+# oauth2client: deprecated by Google in 2017.
+#               If you need Google OAuth, use:
+#                 google-auth
+#                 google-auth-oauthlib
+#                 google-api-python-client
+# oauth2client

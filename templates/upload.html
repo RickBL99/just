@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Just The Meta is a free EXIF, IPTC, XMP, and metadata viewer tool. Drag and drop your images to see the data hiding inside.">
-    <meta name="keywords" content="exif, iptc, xmp, metadata, viewer, tool, free, drag and drop, images">
+    <meta name="description" content="Just The Meta is a free EXIF, IPTC, XMP, and metadata viewer tool. Drag and drop your images (JPEG, HEIC, RAW, and more) to see the data hiding inside.">
+    <meta name="keywords" content="exif, iptc, xmp, heic, iphone, metadata, viewer, tool, free, drag and drop, images">
     <meta name="author" content="Just The Meta">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JustTheMeta — Read EXIF, IPTC, XMP & GPS from your images</title>
@@ -74,6 +74,14 @@
             gap: 24px;
         }
 
+        .brand-group {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+            flex-wrap: nowrap;
+        }
+
         .brand {
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px;
@@ -85,7 +93,9 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            transition: color 0.2s ease;
         }
+        .brand:hover { color: var(--accent); }
 
         .brand-dot {
             display: inline-block;
@@ -94,6 +104,44 @@
             background: var(--accent);
             border-radius: 50%;
         }
+
+        .brand-sep {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.18em;
+            color: var(--ink-mute);
+        }
+
+        .brand-affil {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: color 0.2s ease;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .brand-affil::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -3px;
+            height: 1px;
+            background: currentColor;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+        .brand-affil:hover { color: var(--accent-deep); }
+        .brand-affil:hover::after { opacity: 0.6; }
 
         .help-link {
             font-family: 'JetBrains Mono', monospace;
@@ -104,7 +152,6 @@
             text-decoration: none;
             transition: color 0.2s ease;
         }
-
         .help-link:hover {
             color: var(--accent);
         }
@@ -116,13 +163,6 @@
             padding: 80px 40px 48px;
             position: relative;
             z-index: 2;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            align-items: end;
-            gap: 32px;
         }
 
         .hero-kicker {
@@ -161,34 +201,6 @@
             color: var(--accent);
         }
 
-        .superstock-mark {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 10px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--ink-mute);
-            text-decoration: none;
-            text-align: right;
-            display: block;
-            padding-bottom: 12px;
-        }
-
-        .superstock-mark strong {
-            color: var(--ink);
-            font-weight: 500;
-            display: block;
-            font-size: 13px;
-            letter-spacing: 0.05em;
-            text-transform: none;
-            font-family: 'Fraunces', serif;
-            font-style: italic;
-            margin-top: 4px;
-        }
-
-        .superstock-mark:hover strong {
-            color: var(--accent);
-        }
-
         .hero-blurb {
             margin-top: 40px;
             padding-top: 24px;
@@ -215,7 +227,7 @@
             padding: 72px 48px;
             text-align: center;
             cursor: pointer;
-            transition: background 0.25s ease, border-color 0.25s ease;
+            transition: background 0.25s ease, border-color 0.25s ease, padding 0.3s ease;
             min-height: 320px;
             display: flex;
             flex-direction: column;
@@ -231,9 +243,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Crop-mark corners */
-        .drop-area::before,
-        .drop-area::after,
         .crop-tl, .crop-tr, .crop-bl, .crop-br {
             content: "";
             position: absolute;
@@ -243,27 +252,33 @@
             transition: border-color 0.25s ease;
             pointer-events: none;
         }
-
         .crop-tl { top: -1px; left: -1px; border-top: 2px solid; border-left: 2px solid; }
         .crop-tr { top: -1px; right: -1px; border-top: 2px solid; border-right: 2px solid; }
         .crop-bl { bottom: -1px; left: -1px; border-bottom: 2px solid; border-left: 2px solid; }
         .crop-br { bottom: -1px; right: -1px; border-bottom: 2px solid; border-right: 2px solid; }
 
-        .drop-area:hover {
+        .drop-area:not(.uploading):hover {
             background: #fffefb;
             border-color: var(--accent);
         }
-
         .drop-area.active {
             background: var(--success-bg);
             border-color: var(--success);
         }
-
         .drop-area.active .crop-tl,
         .drop-area.active .crop-tr,
         .drop-area.active .crop-bl,
         .drop-area.active .crop-br {
             border-color: var(--success);
+        }
+        .drop-area.uploading {
+            cursor: default;
+            justify-content: flex-start;
+            align-items: stretch;
+            padding: 40px 40px;
+            text-align: left;
+            gap: 0;
+            background: var(--bg-paper);
         }
 
         .drop-icon {
@@ -274,7 +289,6 @@
             fill: none;
             transition: stroke 0.25s ease, transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
         }
-
         .drop-area:hover .drop-icon {
             stroke: var(--accent);
             transform: translateY(-4px);
@@ -313,33 +327,139 @@
             line-height: 1.8;
         }
 
-        /* Spinner overlay */
-        .loading-overlay {
-            display: none;
+        .drop-idle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+        .drop-area.uploading .drop-idle { display: none; }
+        .drop-processing { display: none; }
+        .drop-area.uploading .drop-processing {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        /* ============ PROCESSING VIEW ============ */
+        .up-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 24px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .up-kicker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            white-space: nowrap;
+        }
+        .up-kicker::after {
+            content: "";
+            display: inline-block;
+            width: 48px;
+            height: 1px;
+            background: var(--accent);
+        }
+        .up-counter { font-variant-numeric: tabular-nums; color: var(--ink); }
+
+        .up-message {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-variation-settings: "opsz" 144;
+            font-size: clamp(22px, 2.6vw, 32px);
+            line-height: 1.15;
+            color: var(--ink);
+            margin: 0;
+            transition: opacity 0.22s ease;
+            min-height: 1.2em;
+        }
+        .up-message.fade { opacity: 0; }
+
+        .up-bar {
+            position: relative;
+            height: 2px;
+            background: var(--rule-soft);
+            margin: 24px 0 0;
+        }
+        .up-bar-fill {
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            width: 0;
+            background: var(--accent);
+            transition: width 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+        }
+
+        .up-list {
+            list-style: none;
+            padding: 0;
+            margin: 24px 0 0;
+            max-height: 280px;
+            overflow-y: auto;
+            border-top: 1px solid var(--rule-soft);
+        }
+
+        .up-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--rule-soft);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.03em;
+            position: relative;
+            overflow: hidden;
+            background: transparent;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+        .up-item:last-child { border-bottom: none; }
+
+        .up-name {
+            color: var(--ink);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0;
+            flex: 1;
+        }
+        .up-status {
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+            white-space: nowrap;
+            font-weight: 500;
+        }
+        .up-item-queued .up-name { color: var(--ink-mute); }
+        .up-item-queued .up-status { color: var(--ink-mute); }
+        .up-item-active { background: rgba(217, 56, 30, 0.04); }
+        .up-item-active .up-status { color: var(--accent); }
+        .up-item-active::after {
+            content: "";
             position: absolute;
             inset: 0;
-            background: rgba(251, 249, 244, 0.92);
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
+            background: linear-gradient(90deg, transparent 0%, rgba(217, 56, 30, 0.10) 50%, transparent 100%);
+            animation: shimmer 1.4s linear infinite;
+            pointer-events: none;
         }
-
-        .loading-overlay.show {
-            display: flex;
+        @keyframes shimmer {
+            from { transform: translateX(-100%); }
+            to   { transform: translateX(100%); }
         }
-
-        .spinner {
-            width: 44px;
-            height: 44px;
-            border: 2px solid var(--rule-soft);
-            border-top: 2px solid var(--accent);
-            border-radius: 50%;
-            animation: spin 0.9s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        .up-item-done .up-status { color: var(--success); }
+        .up-item-done .up-status::before { content: "✓  "; }
+        .up-item-error .up-status { color: var(--accent-deep); }
+        .up-item-error .up-status::before { content: "✗  "; }
 
         /* ============ ACTIONS ============ */
         .actions {
@@ -350,10 +470,7 @@
             z-index: 2;
         }
 
-        #status {
-            margin-bottom: 20px;
-            min-height: 24px;
-        }
+        #status { margin-bottom: 20px; min-height: 24px; }
 
         .alert {
             font-family: 'JetBrains Mono', monospace;
@@ -366,7 +483,6 @@
             align-items: center;
             gap: 12px;
         }
-
         .alert::before {
             display: inline-block;
             width: 8px;
@@ -374,14 +490,12 @@
             content: "";
             border-radius: 50%;
         }
-
         .alert-success {
             background: var(--success-bg);
             color: var(--success);
             border-color: var(--success);
         }
         .alert-success::before { background: var(--success); }
-
         .alert-danger {
             background: var(--danger-bg);
             color: var(--accent-deep);
@@ -412,46 +526,33 @@
             justify-content: center;
             gap: 12px;
         }
-
         .btn:hover {
             background: var(--accent);
             border-color: var(--accent);
         }
-
         .btn:active { transform: translateY(1px); }
-
         .btn:disabled {
             background: transparent;
             color: var(--ink-mute);
             border-color: var(--rule-soft);
             cursor: not-allowed;
         }
-
         .btn:disabled:hover {
             background: transparent;
             color: var(--ink-mute);
             border-color: var(--rule-soft);
         }
-
         .btn-ghost {
             background: transparent;
             color: var(--ink);
         }
-
         .btn-ghost:hover {
             background: var(--ink);
             color: var(--bg-paper);
             border-color: var(--ink);
         }
-
-        .btn .arrow {
-            display: inline-block;
-            transition: transform 0.2s ease;
-        }
-
-        .btn:hover .arrow {
-            transform: translateX(4px);
-        }
+        .btn .arrow { display: inline-block; transition: transform 0.2s ease; }
+        .btn:hover .arrow { transform: translateX(4px); }
 
         /* ============ INFO STRIP ============ */
         .info-strip {
@@ -461,7 +562,6 @@
             position: relative;
             z-index: 2;
         }
-
         .info-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -469,20 +569,13 @@
             padding-top: 32px;
             border-top: 1px solid var(--rule);
         }
-
-        .info-item {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
+        .info-item { display: flex; flex-direction: column; gap: 10px; }
         .info-num {
             font-family: 'JetBrains Mono', monospace;
             font-size: 10px;
             letter-spacing: 0.2em;
             color: var(--accent);
         }
-
         .info-title {
             font-family: 'Fraunces', serif;
             font-weight: 400;
@@ -493,21 +586,18 @@
             margin: 0;
             font-variation-settings: "opsz" 144;
         }
-
         .info-body {
             font-size: 14px;
             color: var(--ink-soft);
             line-height: 1.55;
             margin: 0;
         }
-
         .info-body a {
             color: var(--ink);
             border-bottom: 1px solid var(--rule-soft);
             text-decoration: none;
             transition: color 0.2s, border-color 0.2s;
         }
-
         .info-body a:hover {
             color: var(--accent);
             border-color: var(--accent);
@@ -521,7 +611,6 @@
             position: relative;
             z-index: 2;
         }
-
         .footer-inner {
             border-top: 1px solid var(--rule);
             padding-top: 32px;
@@ -536,7 +625,6 @@
             gap: 24px;
             flex-wrap: wrap;
         }
-
         .footer-inner a {
             color: var(--ink-soft);
             text-decoration: none;
@@ -544,12 +632,10 @@
             padding-bottom: 1px;
             transition: color 0.2s, border-color 0.2s;
         }
-
         .footer-inner a:hover {
             color: var(--accent);
             border-color: var(--accent);
         }
-
         .footer-tag {
             font-style: italic;
             text-transform: none;
@@ -571,28 +657,24 @@
             justify-content: center;
             z-index: 100;
             opacity: 0;
-            transition: opacity 0.2s ease;
+            transition: opacity 0.22s ease;
+            padding: 24px;
+            overflow-y: auto;
         }
-
-        .modal-backdrop-custom.show {
-            display: flex;
-            opacity: 1;
-        }
+        .modal-backdrop-custom.show { display: flex; opacity: 1; }
 
         .modal-card {
             background: var(--bg-paper);
             border: 1px solid var(--rule);
             max-width: 480px;
-            width: calc(100% - 40px);
+            width: 100%;
             padding: 40px;
             position: relative;
             transform: translateY(10px);
-            transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
+            transition: transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1);
+            margin: auto;
         }
-
-        .modal-backdrop-custom.show .modal-card {
-            transform: translateY(0);
-        }
+        .modal-backdrop-custom.show .modal-card { transform: translateY(0); }
 
         .modal-kicker {
             font-family: 'JetBrains Mono', monospace;
@@ -601,17 +683,30 @@
             text-transform: uppercase;
             color: var(--accent);
             margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .modal-kicker::after {
+            content: "";
+            display: inline-block;
+            width: 32px;
+            height: 1px;
+            background: var(--accent);
         }
 
         .modal-title {
             font-family: 'Fraunces', serif;
             font-style: italic;
-            font-size: 36px;
+            font-size: 48px;
             font-weight: 400;
-            line-height: 1.05;
-            margin: 0 0 20px;
+            line-height: 1.0;
+            margin: 0 0 12px;
             color: var(--ink);
+            letter-spacing: -0.01em;
+            font-variation-settings: "opsz" 144;
         }
+        .modal-title.small { font-size: 36px; line-height: 1.05; }
 
         .modal-body-text {
             font-size: 15px;
@@ -632,28 +727,157 @@
             cursor: pointer;
             transition: background 0.2s, color 0.2s;
         }
-
         .modal-close:hover {
             background: var(--ink);
             color: var(--bg-paper);
         }
 
+        .modal-x {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: transparent;
+            border: none;
+            color: var(--ink-mute);
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            transition: color 0.2s;
+            padding: 0;
+        }
+        .modal-x:hover { color: var(--accent); }
+
+        /* ============ ABOUT MODAL ============ */
+        .modal-card-about {
+            max-width: 580px;
+            padding: 56px 48px 48px;
+        }
+
+        .about-lede {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: clamp(18px, 2.2vw, 22px);
+            line-height: 1.35;
+            color: var(--ink);
+            margin: 0 0 28px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--rule-soft);
+            font-variation-settings: "opsz" 144;
+        }
+
+        .about-body {
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--ink-soft);
+            margin: 0 0 18px;
+        }
+        .about-body strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        .verticals-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+            margin: 24px 0 12px;
+        }
+
+        .verticals {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 0 0 28px;
+        }
+        .verticals a {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--ink);
+            border: 1px solid var(--rule-soft);
+            padding: 6px 10px;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+        }
+        .verticals a:hover {
+            background: var(--ink);
+            color: var(--bg-paper);
+            border-color: var(--ink);
+        }
+
+        .about-tagline {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: 20px;
+            color: var(--accent);
+            margin: 28px 0 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--rule-soft);
+            font-variation-settings: "opsz" 144;
+        }
+
+        .modal-cta {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            padding: 16px 24px;
+            border: 1px solid var(--ink);
+            background: var(--ink);
+            color: var(--bg-paper);
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .modal-cta:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg-paper);
+        }
+        .cta-arrow {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+        .modal-cta:hover .cta-arrow { transform: translateX(4px); }
+
         /* ============ RESPONSIVE ============ */
         @media (max-width: 768px) {
-            .topbar-inner { padding: 14px 20px; }
+            .topbar-inner { padding: 14px 20px; gap: 12px; }
+            .brand-group { gap: 8px; }
+            .brand-sep { display: none; }
+            .brand-affil { font-size: 10px; }
+            .brand { font-size: 10px; }
+            .help-link { display: none; }
+
             .hero { padding: 56px 20px 32px; }
-            .hero-grid { grid-template-columns: 1fr; align-items: start; gap: 16px; }
-            .superstock-mark { text-align: left; }
             .drop-section { padding: 16px 20px; }
             .drop-area { padding: 56px 24px; min-height: 280px; }
+            .drop-area.uploading { padding: 28px 20px; }
             .actions { padding: 16px 20px 0; }
             .action-row { grid-template-columns: 1fr; }
             .info-strip { padding: 56px 20px 32px; }
             .info-grid { grid-template-columns: 1fr; gap: 32px; }
             .footer { padding: 0 20px 32px; }
             .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
-            .modal-card { padding: 32px 24px; }
-            .modal-title { font-size: 28px; }
+            .modal-card { padding: 36px 24px; }
+            .modal-card-about { padding: 48px 24px 32px; }
+            .modal-title { font-size: 36px; }
+            .modal-title.small { font-size: 28px; }
+            .up-head { gap: 8px; }
+            .up-kicker::after { display: none; }
         }
     </style>
 </head>
@@ -661,27 +885,23 @@
 
 <header class="topbar">
     <div class="topbar-inner">
-        <a href="/" class="brand">
-            <span class="brand-dot"></span>
-            JustTheMeta — A SuperStock Tool
-        </a>
+        <div class="brand-group">
+            <a href="/" class="brand">
+                <span class="brand-dot"></span>
+                JustTheMeta
+            </a>
+            <span class="brand-sep">—</span>
+            <button type="button" class="brand-affil" id="open-about-btn" aria-haspopup="dialog">A SuperStock Tool</button>
+        </div>
         <a href="mailto:info@justthemeta.com?subject=JustTheMeta%20Feedback" class="help-link">Get in touch</a>
     </div>
 </header>
 
 <section class="hero">
-    <div class="hero-grid">
-        <div>
-            <div class="hero-kicker">Free Tool · EXIF · IPTC · XMP · GPS</div>
-            <h1 class="hero-title">Just <em>the</em><br>meta.</h1>
-        </div>
-        <a href="https://superstock.com" class="superstock-mark">
-            Brought to you by
-            <strong>SuperStock</strong>
-        </a>
-    </div>
+    <div class="hero-kicker">Free Tool · EXIF · IPTC · XMP · GPS</div>
+    <h1 class="hero-title">Just <em>the</em><br>meta.</h1>
     <p class="hero-blurb">
-        Drop in an image — JPEG, PNG, RAW, the works — and we'll pull every scrap of metadata hiding inside.
+        Drop in an image — JPEG, HEIC, PNG, RAW, the works — and we'll pull every scrap of metadata hiding inside.
         XMP, JFIF, ICC, IPTC, EXIF, Composite, and GPS coordinates if they're there. Nothing's retained. Nothing's stored.
     </p>
 </section>
@@ -693,24 +913,33 @@
         <span class="crop-bl"></span>
         <span class="crop-br"></span>
 
-        <svg class="drop-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 4v12m0-12l-5 5m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+        <!-- Idle state -->
+        <div class="drop-idle">
+            <svg class="drop-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4v12m0-12l-5 5m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 16v3a1 1 0 001 1h14a1 1 0 001-1v-3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
 
-        <h2 class="drop-headline">Drop files here, or click to browse.</h2>
-        <p class="drop-subline">Up to 30 images per batch</p>
+            <h2 class="drop-headline">Drop files here, or click to browse.</h2>
+            <p class="drop-subline">Up to 30 images per batch</p>
 
-        <div class="drop-formats">
-            JPEG · PNG · TIFF · GIF · BMP · PSD<br>
-            RAW · DNG · CR2 · NEF · SR2
+            <div class="drop-formats">
+                JPEG · HEIC · PNG · TIFF · GIF · BMP · PSD<br>
+                RAW · DNG · CR2 · NEF · SR2
+            </div>
+        </div>
+
+        <!-- Processing state -->
+        <div class="drop-processing">
+            <div class="up-head">
+                <div class="up-kicker">Processing · <span class="up-counter" id="up-counter">0 / 0</span></div>
+            </div>
+            <p class="up-message" id="up-message">Cracking open the headers…</p>
+            <div class="up-bar"><div class="up-bar-fill" id="up-bar-fill"></div></div>
+            <ul class="up-list" id="up-list"></ul>
         </div>
 
         <input type="file" id="file-input" style="display:none" multiple>
-
-        <div class="loading-overlay">
-            <div class="spinner"></div>
-        </div>
     </div>
 </section>
 
@@ -731,7 +960,7 @@
         <div class="info-item">
             <span class="info-num">01</span>
             <h3 class="info-title">All the formats.</h3>
-            <p class="info-body">JPEG, PNG, TIFF, GIF, BMP, PSD, plus the RAW formats — DNG, CR2, NEF, SR2. If there's metadata, we'll show it. GPS included.</p>
+            <p class="info-body">JPEG, HEIC, PNG, TIFF, GIF, BMP, PSD, plus the RAW formats — DNG, CR2, NEF, SR2. iPhone HEICs included. If there's metadata, we'll show it. GPS too.</p>
         </div>
         <div class="info-item">
             <span class="info-num">02</span>
@@ -748,7 +977,7 @@
 
 <footer class="footer">
     <div class="footer-inner">
-        <span>© 2026 SuperStock · JustTheMeta v3.0</span>
+        <span>© 2026 SuperStock · JustTheMeta v3.3</span>
         <span class="footer-tag">
             Got feedback? <a href="mailto:info@justthemeta.com?subject=JustTheMeta%20Feedback">Say hello</a>.
         </span>
@@ -759,27 +988,93 @@
 <div class="modal-backdrop-custom" id="error-modal">
     <div class="modal-card">
         <div class="modal-kicker">Slow Down</div>
-        <h3 class="modal-title">Whoa — <em>simmer down.</em></h3>
+        <h3 class="modal-title small">Whoa — <em>simmer down.</em></h3>
         <p class="modal-body-text">Try fewer than 30 files at a time. Big batches can choke the uploader; smaller drops process faster anyway.</p>
         <button type="button" class="modal-close" onclick="closeModal('error-modal')">Got it</button>
     </div>
 </div>
 
-<!-- Working modal (kept for parity; not auto-shown currently) -->
-<div class="modal-backdrop-custom" id="working-modal">
-    <div class="modal-card">
-        <div class="modal-kicker">Hold On</div>
-        <h3 class="modal-title">Working <em>on it…</em></h3>
-        <p class="modal-body-text">Reading EXIF, IPTC, and XMP. This usually takes a few seconds — longer for big RAW files.</p>
+<!-- About modal -->
+<div class="modal-backdrop-custom" id="about-modal" role="dialog" aria-modal="true" aria-labelledby="about-title">
+    <div class="modal-card modal-card-about">
+        <button type="button" class="modal-x" onclick="closeModal('about-modal')" aria-label="Close">×</button>
+        <div class="modal-kicker">About · The Parent Co.</div>
+        <h3 class="modal-title" id="about-title">SuperStock.</h3>
+        <p class="about-lede">
+            Over fifty years in, photographer-owned, and unapologetically picky about what we license.
+        </p>
+
+        <p class="about-body">
+            We've been at this since the early '70s — <strong>more than five decades</strong> of building one of the most diverse libraries in stock photography. Curated by humans who shoot, edit, and license, not by an algorithm chasing trends.
+        </p>
+
+        <p class="about-body">
+            Photographer-owned, which means the people pulling the strings are the same people behind the lenses. Browse, license, license again. We work for the photographers first.
+        </p>
+
+        <div class="verticals-label">Across the verticals</div>
+        <div class="verticals">
+            <a href="https://www.superstock.com/fineart" target="_blank" rel="noopener">Fine Art</a>
+            <a href="https://www.superstock.com" target="_blank" rel="noopener">Contemporary</a>
+            <a href="https://www.superstock.com/vintage" target="_blank" rel="noopener">Vintage</a>
+            <a href="https://www.superstock.com/footage" target="_blank" rel="noopener">Footage</a>
+            <a href="https://www.superstock.com/subscription" target="_blank" rel="noopener">Subscription</a>
+        </div>
+
+        <p class="about-tagline"><em>Frankly — we're badass.</em></p>
+
+        <a href="https://superstock.com" class="modal-cta" target="_blank" rel="noopener">
+            Visit superstock.com <span class="cta-arrow">→</span>
+        </a>
     </div>
 </div>
 
 <script>
-    var dropArea = document.getElementById('drop-area');
-    var fileInput = document.getElementById('file-input');
-    var loadingOverlay = document.querySelector('.loading-overlay');
-    var getMetaButton = document.getElementById('get-meta-button');
+    // ---------- Fun status messages ----------
+    var FUN_MESSAGES = [
+        "Cracking open the headers…",
+        "Sniffing for GPS coordinates…",
+        "Asking ExifTool nicely…",
+        "Reading between the bytes…",
+        "Inspecting the IPTC layer…",
+        "Decoding shutter secrets…",
+        "Unpacking the XMP packet…",
+        "Checking who, where, and when…",
+        "Polling the metadata oracles…",
+        "Measuring aperture and attitude…",
+        "Combing the EXIF chunks…",
+        "Translating from camera-speak…",
+        "Tickling the ICC profile…",
+        "Negotiating with the RAW data…",
+        "Eyeballing the white balance…",
+        "Reading what the lens remembered…",
+        "Pulling threads from the file header…",
+        "Coaxing secrets out of the bits…",
+        "Catching the focal length in the act…",
+        "Asking the sensor where it's been…"
+    ];
 
+    var FINAL_MESSAGES = {
+        all_ok:   "All set.",
+        partial:  "Mostly there.",
+        none:     "Hmm — that didn't go well."
+    };
+
+    // ---------- DOM ----------
+    var dropArea       = document.getElementById('drop-area');
+    var fileInput      = document.getElementById('file-input');
+    var getMetaButton  = document.getElementById('get-meta-button');
+    var statusEl       = document.getElementById('status');
+    var upCounter      = document.getElementById('up-counter');
+    var upMessage      = document.getElementById('up-message');
+    var upBarFill      = document.getElementById('up-bar-fill');
+    var upList         = document.getElementById('up-list');
+
+    var uploadInFlight = false;
+    var messageTimer   = null;
+    var lastMessage    = "";
+
+    // ---------- Drag & drop wiring ----------
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(function (eventName) {
         dropArea.addEventListener(eventName, preventDefaults, false);
     });
@@ -790,19 +1085,20 @@
     }
 
     dropArea.addEventListener('dragenter', function () {
+        if (uploadInFlight) return;
         dropArea.classList.add('active');
     });
-
     dropArea.addEventListener('dragleave', function () {
         dropArea.classList.remove('active');
     });
-
     dropArea.addEventListener('drop', function (e) {
         dropArea.classList.remove('active');
+        if (uploadInFlight) return;
         handleFiles(e.dataTransfer.files);
     });
 
     dropArea.addEventListener('click', function () {
+        if (uploadInFlight) return;
         fileInput.click();
     });
 
@@ -810,41 +1106,160 @@
         handleFiles(fileInput.files);
     });
 
-    function handleFiles(files) {
-        if (files.length > 30) {
+    // ---------- Main upload loop ----------
+    function handleFiles(fileList) {
+        if (uploadInFlight) return;
+        if (!fileList || fileList.length === 0) return;
+
+        if (fileList.length > 30) {
             openModal('error-modal');
-            loadingOverlay.classList.remove('show');
             return;
         }
 
-        loadingOverlay.classList.add('show');
-
-        var formData = new FormData();
-        for (var i = 0; i < files.length; i++) {
-            formData.append("files", files[i]);
-        }
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "/api/upload");
-        xhr.addEventListener("load", function () {
-            if (xhr.status === 200) {
-                document.getElementById("status").innerHTML =
-                    '<div class="alert alert-success">' + files.length + ' file' + (files.length === 1 ? '' : 's') + ' uploaded — ready to read</div>';
-                getMetaButton.disabled = false;
-            } else {
-                document.getElementById("status").innerHTML =
-                    '<div class="alert alert-danger">Upload error — please reload and try again</div>';
-            }
-            loadingOverlay.classList.remove('show');
-        });
-        xhr.addEventListener("error", function () {
-            document.getElementById("status").innerHTML =
-                '<div class="alert alert-danger">Upload error — please reload and try again</div>';
-            loadingOverlay.classList.remove('show');
-        });
-        xhr.send(formData);
+        var files = Array.prototype.slice.call(fileList);
+        startProcessing(files);
     }
 
+    function startProcessing(files) {
+        uploadInFlight = true;
+        dropArea.classList.add('uploading');
+        statusEl.innerHTML = '';
+        getMetaButton.disabled = true;
+
+        upList.innerHTML = '';
+        files.forEach(function (f, i) {
+            var li = document.createElement('li');
+            li.className = 'up-item up-item-queued';
+            li.dataset.idx = i;
+            li.innerHTML =
+                '<span class="up-name"></span>' +
+                '<span class="up-status">Queued</span>';
+            li.querySelector('.up-name').textContent = f.name;
+            upList.appendChild(li);
+        });
+
+        setCounter(0, files.length);
+        setProgress(0);
+        startMessageCycle();
+
+        runQueue(files);
+    }
+
+    async function runQueue(files) {
+        var done = 0;
+        var failed = 0;
+
+        for (var i = 0; i < files.length; i++) {
+            var li = upList.querySelector('[data-idx="' + i + '"]');
+            li.classList.remove('up-item-queued');
+            li.classList.add('up-item-active');
+            li.querySelector('.up-status').textContent = 'Reading';
+
+            try { li.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } catch (e) {}
+
+            try {
+                await uploadOne(files[i]);
+                li.classList.remove('up-item-active');
+                li.classList.add('up-item-done');
+                li.querySelector('.up-status').textContent = 'Done';
+                done++;
+            } catch (err) {
+                li.classList.remove('up-item-active');
+                li.classList.add('up-item-error');
+                li.querySelector('.up-status').textContent = 'Failed';
+                failed++;
+            }
+
+            setCounter(i + 1, files.length);
+            setProgress((i + 1) / files.length);
+        }
+
+        finishProcessing(done, failed);
+    }
+
+    function uploadOne(file) {
+        return new Promise(function (resolve, reject) {
+            var formData = new FormData();
+            formData.append("files", file);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/api/upload");
+            xhr.addEventListener("load", function () {
+                if (xhr.status >= 200 && xhr.status < 300) resolve();
+                else reject(new Error("server " + xhr.status));
+            });
+            xhr.addEventListener("error", function () { reject(new Error("network")); });
+            xhr.addEventListener("abort", function () { reject(new Error("aborted")); });
+            xhr.send(formData);
+        });
+    }
+
+    function finishProcessing(done, failed) {
+        stopMessageCycle();
+
+        var key = failed === 0 ? 'all_ok' : (done > 0 ? 'partial' : 'none');
+        fadeMessage(FINAL_MESSAGES[key]);
+
+        setTimeout(function () {
+            dropArea.classList.remove('uploading');
+            uploadInFlight = false;
+            fileInput.value = '';
+
+            if (done > 0 && failed === 0) {
+                statusEl.innerHTML =
+                    '<div class="alert alert-success">' +
+                    done + ' file' + (done === 1 ? '' : 's') +
+                    ' uploaded — ready to read</div>';
+                getMetaButton.disabled = false;
+            } else if (done > 0) {
+                statusEl.innerHTML =
+                    '<div class="alert alert-success">' +
+                    done + ' uploaded, ' + failed + ' failed — ready to read</div>';
+                getMetaButton.disabled = false;
+            } else {
+                statusEl.innerHTML =
+                    '<div class="alert alert-danger">Upload error — please reload and try again</div>';
+            }
+        }, 1500);
+    }
+
+    // ---------- UI helpers ----------
+    function setProgress(ratio) {
+        upBarFill.style.width = (Math.max(0, Math.min(1, ratio)) * 100) + '%';
+    }
+    function setCounter(i, n) { upCounter.textContent = i + ' / ' + n; }
+
+    function pickFunMessage() {
+        var msg;
+        var safety = 0;
+        do {
+            msg = FUN_MESSAGES[Math.floor(Math.random() * FUN_MESSAGES.length)];
+            safety++;
+        } while (msg === lastMessage && safety < 8);
+        lastMessage = msg;
+        return msg;
+    }
+
+    function fadeMessage(text) {
+        upMessage.classList.add('fade');
+        setTimeout(function () {
+            upMessage.textContent = text;
+            upMessage.classList.remove('fade');
+        }, 220);
+    }
+
+    function startMessageCycle() {
+        upMessage.textContent = pickFunMessage();
+        messageTimer = setInterval(function () {
+            fadeMessage(pickFunMessage());
+        }, 2200);
+    }
+
+    function stopMessageCycle() {
+        if (messageTimer) { clearInterval(messageTimer); messageTimer = null; }
+    }
+
+    // ---------- Misc ----------
     function submitForm(actionUrl) {
         var form = document.createElement("form");
         form.setAttribute("method", "POST");
@@ -853,19 +1268,20 @@
         form.submit();
     }
 
-    function openModal(id) {
-        document.getElementById(id).classList.add('show');
-    }
-    function closeModal(id) {
-        document.getElementById(id).classList.remove('show');
-    }
-    // Close modal on backdrop click
+    function openModal(id) { document.getElementById(id).classList.add('show'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+
+    // About modal trigger
+    document.getElementById('open-about-btn').addEventListener('click', function () {
+        openModal('about-modal');
+    });
+
+    // Backdrop click + ESC close any modal
     document.querySelectorAll('.modal-backdrop-custom').forEach(function (m) {
         m.addEventListener('click', function (e) {
             if (e.target === m) m.classList.remove('show');
         });
     });
-    // ESC closes modals
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             document.querySelectorAll('.modal-backdrop-custom.show').forEach(function (m) {

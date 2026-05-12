@@ -53,6 +53,9 @@ requests>=2.32.0
 ftputil>=5.1.0
 schedule>=1.2.1
 pillow-heif
+reportlab
+openpyxl
+pillow-heif
 
 # =============================================================
 # ⚠️  DEPRECATED — REPLACE WHEN YOU CAN

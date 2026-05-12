@@ -898,17 +898,6 @@
             border-color: var(--ink);
         }
 
-        .about-tagline {
-            font-family: 'Fraunces', serif;
-            font-style: italic;
-            font-size: 20px;
-            color: var(--accent);
-            margin: 28px 0 32px;
-            padding-top: 24px;
-            border-top: 1px solid var(--rule-soft);
-            font-variation-settings: "opsz" 144;
-        }
-
         .modal-cta {
             font-family: 'JetBrains Mono', monospace;
             font-size: 12px;
@@ -982,6 +971,122 @@
             .modal-backdrop-custom.show .poof-title { animation: none; }
         }
 
+        /* ============ EXTRACTION OVERLAY ============ */
+        /* Full-screen feedback shown when "Show me the meta" is clicked.
+           The server-side extraction takes a while (5s waits + exiftool per file),
+           so this keeps the user informed instead of staring at a frozen tab. */
+        .extract-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 300;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 40px 24px;
+        }
+        .extract-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+        .extract-overlay::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.5;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        .extract-card {
+            position: relative;
+            z-index: 1;
+            max-width: 640px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .extract-kicker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin: 0 0 36px;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .extract-kicker::before,
+        .extract-kicker::after {
+            content: "";
+            display: inline-block;
+            width: 36px;
+            height: 1px;
+            background: var(--accent);
+        }
+        .extract-kicker .pulse-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: inline-block;
+            animation: brandPulse 1.6s ease-in-out infinite;
+        }
+
+        .extract-title {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(32px, 5vw, 56px);
+            line-height: 1.1;
+            color: var(--ink);
+            margin: 0 0 48px;
+            min-height: 1.2em;
+            letter-spacing: -0.01em;
+            font-variation-settings: "opsz" 144;
+            transition: opacity 0.22s ease;
+        }
+        .extract-title.fade { opacity: 0; }
+
+        .extract-bar {
+            position: relative;
+            height: 2px;
+            background: var(--rule-soft);
+            max-width: 480px;
+            margin: 0 auto 32px;
+            overflow: hidden;
+        }
+        .extract-bar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -40%;
+            width: 40%;
+            background: var(--accent);
+            animation: extractSlide 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
+        @keyframes extractSlide {
+            0%   { left: -40%; }
+            100% { left: 100%; }
+        }
+
+        .extract-note {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .extract-bar::before { animation: none; left: 30%; }
+        }
+
         /* ============ RESPONSIVE ============ */
         @media (max-width: 768px) {
             .topbar-inner { padding: 14px 20px; gap: 12px; }
@@ -1030,7 +1135,7 @@
     <div class="hero-kicker">Free Tool · EXIF · IPTC · XMP · GPS</div>
     <h1 class="hero-title">Just <em>the</em><br>meta.</h1>
     <p class="hero-blurb">
-        Drop in your images (a reasonable amount, dude) — JPEG, HEIC, PNG, RAW, the works — and we'll pull every scrap of metadata hiding inside.
+        Upload your image(s) — JPEG, HEIC, PNG, RAW, the works — and we'll pull every scrap of metadata hiding inside.
         XMP, JFIF, ICC, IPTC, EXIF, Composite, and GPS coordinates if they're there. Nothing's retained. Nothing's stored.
     </p>
 </section>
@@ -1150,8 +1255,6 @@
             <a href="https://www.superstock.com/subscription" target="_blank" rel="noopener">Subscription</a>
         </div>
 
-        <p class="about-tagline"><em>Frankly — we're badass.</em></p>
-
         <a href="https://superstock.com" class="modal-cta" target="_blank" rel="noopener">
             Visit superstock.com <span class="cta-arrow">→</span>
         </a>
@@ -1164,6 +1267,20 @@
         <div class="modal-kicker">Session · Cleared</div>
         <h3 class="poof-title">Poof!</h3>
         <p class="poof-sub">Files gone. Like they were never here.</p>
+    </div>
+</div>
+
+<!-- Extraction overlay — shown after "Show me the meta" is clicked.
+     Stays on screen until the server returns the report page (full nav). -->
+<div class="extract-overlay" id="extract-overlay" role="status" aria-live="polite" aria-hidden="true">
+    <div class="extract-card">
+        <div class="extract-kicker">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Extracting · Metadata
+        </div>
+        <h2 class="extract-title" id="extract-title">Cracking open the headers…</h2>
+        <div class="extract-bar" aria-hidden="true"></div>
+        <p class="extract-note">This can take a moment — please don't close the window.</p>
     </div>
 </div>
 
@@ -1397,13 +1514,55 @@
         if (messageTimer) { clearInterval(messageTimer); messageTimer = null; }
     }
 
+    // ---------- Extraction overlay (shown while server processes /api/getallmeta) ----------
+    var extractTimer = null;
+    var extractStarted = false;
+
+    function showExtractOverlay() {
+        if (extractStarted) return;
+        extractStarted = true;
+
+        var overlay = document.getElementById('extract-overlay');
+        var titleEl = document.getElementById('extract-title');
+
+        overlay.setAttribute('aria-hidden', 'false');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+
+        // Start with a fresh message, then cycle
+        titleEl.textContent = pickFunMessage();
+        extractTimer = setInterval(function () {
+            titleEl.classList.add('fade');
+            setTimeout(function () {
+                titleEl.textContent = pickFunMessage();
+                titleEl.classList.remove('fade');
+            }, 220);
+        }, 2400);
+    }
+
     // ---------- Misc ----------
     function submitForm(actionUrl) {
-        var form = document.createElement("form");
-        form.setAttribute("method", "POST");
-        form.setAttribute("action", actionUrl);
-        document.body.appendChild(form);
-        form.submit();
+        // Show the overlay first so it paints, then submit the form.
+        // The form submit triggers a full-page navigation; the overlay stays
+        // visible until the server returns the new page, which is exactly
+        // the feedback we want during the wait.
+        showExtractOverlay();
+
+        // Disable the button so a double-click can't fire two submissions
+        if (getMetaButton) getMetaButton.disabled = true;
+
+        // Double rAF ensures the overlay has actually painted before we hand
+        // control to the form submission (which can stall the main thread
+        // briefly while the request kicks off).
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () {
+                var form = document.createElement("form");
+                form.setAttribute("method", "POST");
+                form.setAttribute("action", actionUrl);
+                document.body.appendChild(form);
+                form.submit();
+            });
+        });
     }
 
     function openModal(id) { document.getElementById(id).classList.add('show'); }

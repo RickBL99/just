@@ -772,3 +772,276 @@
 2026-05-11 23:06:06,758 - api.getallmeta - DEBUG - Waiting 5s to ensure all files are available
 2026-05-11 23:06:11,905 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_0577.jpeg
 2026-05-11 23:06:11,981 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_3078.jpeg
+2026-05-12 08:40:16,066 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:16,067 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:16,067 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:17,073 - api.upload - DEBUG - Received file 100815.jpg
+2026-05-12 08:40:17,086 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:17,125 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:17,126 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:17,126 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:18,131 - api.upload - DEBUG - Received file 100956.jpg
+2026-05-12 08:40:18,138 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:18,168 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:18,169 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:18,169 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:19,176 - api.upload - DEBUG - Received file 101016.jpg
+2026-05-12 08:40:19,187 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:19,214 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:19,214 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:19,214 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:20,219 - api.upload - DEBUG - Received file 101091.jpg
+2026-05-12 08:40:20,232 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:20,267 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:20,267 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:20,267 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:21,275 - api.upload - DEBUG - Received file 101380.jpg
+2026-05-12 08:40:21,279 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:21,315 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:21,315 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:21,315 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:22,320 - api.upload - DEBUG - Received file 103062.jpg
+2026-05-12 08:40:22,330 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:22,365 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:22,365 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:22,365 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:23,373 - api.upload - DEBUG - Received file 105009.jpg
+2026-05-12 08:40:23,388 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:23,418 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:23,419 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:23,419 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:24,425 - api.upload - DEBUG - Received file 105045.jpg
+2026-05-12 08:40:24,436 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:24,462 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:24,462 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:24,462 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:25,464 - api.upload - DEBUG - Received file 105046.jpg
+2026-05-12 08:40:25,475 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:25,501 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:25,501 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:25,501 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:26,507 - api.upload - DEBUG - Received file 105067.jpg
+2026-05-12 08:40:26,517 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:26,547 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:26,547 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:26,547 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:27,553 - api.upload - DEBUG - Received file 105110.jpg
+2026-05-12 08:40:27,562 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:27,587 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:27,587 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:27,587 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:28,592 - api.upload - DEBUG - Received file 105312.jpg
+2026-05-12 08:40:28,600 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:28,630 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:28,631 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:28,631 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:29,637 - api.upload - DEBUG - Received file 105971.jpg
+2026-05-12 08:40:29,652 - api.upload - DEBUG - File upload complete
+2026-05-12 08:40:29,680 - api.upload - DEBUG - Session ID retrieved from request cookies: 08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:29,680 - api.upload - DEBUG - Directory created for session ID 08d8d2857d500720ccf1671fcb412370 at /Users/musicroom/Desktop/python/just/uploaded_files/08d8d2857d500720ccf1671fcb412370
+2026-05-12 08:40:29,680 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:40:30,686 - api.upload - DEBUG - Received file 106061.jpg
+2026-05-12 08:40:30,932 - api.upload - DEBUG - File upload complete
+2026-05-12 08:47:55,503 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:47:55,504 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:47:55,504 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:47:56,510 - api.upload - DEBUG - Received file 100815.jpg
+2026-05-12 08:47:56,527 - api.upload - DEBUG - File upload complete
+2026-05-12 08:47:56,564 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:47:56,565 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:47:56,565 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:47:57,571 - api.upload - DEBUG - Received file 100956.jpg
+2026-05-12 08:47:57,580 - api.upload - DEBUG - File upload complete
+2026-05-12 08:47:57,610 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:47:57,610 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:47:57,610 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:47:58,617 - api.upload - DEBUG - Received file 101016.jpg
+2026-05-12 08:47:58,630 - api.upload - DEBUG - File upload complete
+2026-05-12 08:47:58,659 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:47:58,660 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:47:58,660 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:47:59,666 - api.upload - DEBUG - Received file 101091.jpg
+2026-05-12 08:47:59,681 - api.upload - DEBUG - File upload complete
+2026-05-12 08:47:59,714 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:47:59,714 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:47:59,714 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:48:00,721 - api.upload - DEBUG - Received file 101380.jpg
+2026-05-12 08:48:00,743 - api.upload - DEBUG - File upload complete
+2026-05-12 08:48:00,768 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:00,768 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:00,768 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:48:01,774 - api.upload - DEBUG - Received file 103062.jpg
+2026-05-12 08:48:01,779 - api.upload - DEBUG - File upload complete
+2026-05-12 08:48:01,815 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:01,815 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:01,815 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:48:02,822 - api.upload - DEBUG - Received file 105009.jpg
+2026-05-12 08:48:02,828 - api.upload - DEBUG - File upload complete
+2026-05-12 08:48:02,856 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:02,856 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:02,856 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:48:03,859 - api.upload - DEBUG - Received file 105045.jpg
+2026-05-12 08:48:03,869 - api.upload - DEBUG - File upload complete
+2026-05-12 08:48:03,894 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:03,895 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:03,895 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:48:04,900 - api.upload - DEBUG - Received file 105046.jpg
+2026-05-12 08:48:04,910 - api.upload - DEBUG - File upload complete
+2026-05-12 08:48:04,936 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:04,937 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:04,937 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:48:05,940 - api.upload - DEBUG - Received file 105067.jpg
+2026-05-12 08:48:05,957 - api.upload - DEBUG - File upload complete
+2026-05-12 08:48:05,986 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:05,986 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:05,986 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:48:06,993 - api.upload - DEBUG - Received file 105110.jpg
+2026-05-12 08:48:07,009 - api.upload - DEBUG - File upload complete
+2026-05-12 08:48:07,034 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:07,035 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:07,035 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:48:08,041 - api.upload - DEBUG - Received file 105312.jpg
+2026-05-12 08:48:08,055 - api.upload - DEBUG - File upload complete
+2026-05-12 08:48:08,083 - api.upload - DEBUG - Session ID retrieved from request cookies: 73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:08,083 - api.upload - DEBUG - Directory created for session ID 73d8aecdc701891968d70c38171008bd at /Users/musicroom/Desktop/python/just/uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:08,083 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:48:09,089 - api.upload - DEBUG - Received file 105971.jpg
+2026-05-12 08:48:09,102 - api.upload - DEBUG - File upload complete
+2026-05-12 08:48:12,383 - api.getallmeta - DEBUG - Waiting 5s before getting cookie
+2026-05-12 08:48:17,387 - api.getallmeta - DEBUG - Full path: uploaded_files/73d8aecdc701891968d70c38171008bd
+2026-05-12 08:48:17,387 - api.getallmeta - DEBUG - Waiting 5s to ensure all files are available
+2026-05-12 08:48:22,612 - api.getallmeta - DEBUG - Metadata retrieved successfully for 100815.jpg
+2026-05-12 08:48:22,670 - api.getallmeta - DEBUG - Metadata retrieved successfully for 100956.jpg
+2026-05-12 08:48:22,727 - api.getallmeta - DEBUG - Metadata retrieved successfully for 101016.jpg
+2026-05-12 08:48:22,785 - api.getallmeta - DEBUG - Metadata retrieved successfully for 101091.jpg
+2026-05-12 08:48:22,842 - api.getallmeta - DEBUG - Metadata retrieved successfully for 101380.jpg
+2026-05-12 08:48:22,900 - api.getallmeta - DEBUG - Metadata retrieved successfully for 103062.jpg
+2026-05-12 08:48:22,960 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105009.jpg
+2026-05-12 08:48:23,018 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105045.jpg
+2026-05-12 08:48:23,076 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105046.jpg
+2026-05-12 08:48:23,133 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105067.jpg
+2026-05-12 08:48:23,190 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105110.jpg
+2026-05-12 08:48:23,246 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105312.jpg
+2026-05-12 08:48:23,303 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105971.jpg
+2026-05-12 08:50:31,955 - api.upload - DEBUG - Session ID retrieved from request cookies: 655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:31,956 - api.upload - DEBUG - Directory created for session ID 655c239bb70952c55e7af04ef8287d8d at /Users/musicroom/Desktop/python/just/uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:31,956 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:50:32,963 - api.upload - DEBUG - Received file 105312.jpg
+2026-05-12 08:50:32,985 - api.upload - DEBUG - File upload complete
+2026-05-12 08:50:33,019 - api.upload - DEBUG - Session ID retrieved from request cookies: 655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:33,019 - api.upload - DEBUG - Directory created for session ID 655c239bb70952c55e7af04ef8287d8d at /Users/musicroom/Desktop/python/just/uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:33,019 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:50:34,025 - api.upload - DEBUG - Received file 105971.jpg
+2026-05-12 08:50:34,043 - api.upload - DEBUG - File upload complete
+2026-05-12 08:50:34,073 - api.upload - DEBUG - Session ID retrieved from request cookies: 655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:34,073 - api.upload - DEBUG - Directory created for session ID 655c239bb70952c55e7af04ef8287d8d at /Users/musicroom/Desktop/python/just/uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:34,073 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:50:35,075 - api.upload - DEBUG - Received file 106061.jpg
+2026-05-12 08:50:35,082 - api.upload - DEBUG - File upload complete
+2026-05-12 08:50:35,115 - api.upload - DEBUG - Session ID retrieved from request cookies: 655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:35,115 - api.upload - DEBUG - Directory created for session ID 655c239bb70952c55e7af04ef8287d8d at /Users/musicroom/Desktop/python/just/uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:35,115 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:50:36,123 - api.upload - DEBUG - Received file 106633.jpg
+2026-05-12 08:50:36,137 - api.upload - DEBUG - File upload complete
+2026-05-12 08:50:36,169 - api.upload - DEBUG - Session ID retrieved from request cookies: 655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:36,169 - api.upload - DEBUG - Directory created for session ID 655c239bb70952c55e7af04ef8287d8d at /Users/musicroom/Desktop/python/just/uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:36,169 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:50:37,176 - api.upload - DEBUG - Received file 107045.jpg
+2026-05-12 08:50:37,193 - api.upload - DEBUG - File upload complete
+2026-05-12 08:50:37,221 - api.upload - DEBUG - Session ID retrieved from request cookies: 655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:37,221 - api.upload - DEBUG - Directory created for session ID 655c239bb70952c55e7af04ef8287d8d at /Users/musicroom/Desktop/python/just/uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:37,221 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:50:38,223 - api.upload - DEBUG - Received file 107712.jpg
+2026-05-12 08:50:38,241 - api.upload - DEBUG - File upload complete
+2026-05-12 08:50:38,264 - api.upload - DEBUG - Session ID retrieved from request cookies: 655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:38,264 - api.upload - DEBUG - Directory created for session ID 655c239bb70952c55e7af04ef8287d8d at /Users/musicroom/Desktop/python/just/uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:38,265 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:50:39,270 - api.upload - DEBUG - Received file 109245.jpg
+2026-05-12 08:50:39,278 - api.upload - DEBUG - File upload complete
+2026-05-12 08:50:39,305 - api.upload - DEBUG - Session ID retrieved from request cookies: 655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:39,305 - api.upload - DEBUG - Directory created for session ID 655c239bb70952c55e7af04ef8287d8d at /Users/musicroom/Desktop/python/just/uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:39,306 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:50:40,313 - api.upload - DEBUG - Received file 110797.jpg
+2026-05-12 08:50:40,327 - api.upload - DEBUG - File upload complete
+2026-05-12 08:50:40,356 - api.upload - DEBUG - Session ID retrieved from request cookies: 655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:40,356 - api.upload - DEBUG - Directory created for session ID 655c239bb70952c55e7af04ef8287d8d at /Users/musicroom/Desktop/python/just/uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:40,356 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:50:41,362 - api.upload - DEBUG - Received file 111111.jpg
+2026-05-12 08:50:41,366 - api.upload - DEBUG - File upload complete
+2026-05-12 08:50:41,391 - api.upload - DEBUG - Session ID retrieved from request cookies: 655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:41,391 - api.upload - DEBUG - Directory created for session ID 655c239bb70952c55e7af04ef8287d8d at /Users/musicroom/Desktop/python/just/uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:41,391 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:50:42,394 - api.upload - DEBUG - Received file 111248.jpg
+2026-05-12 08:50:42,399 - api.upload - DEBUG - File upload complete
+2026-05-12 08:50:42,425 - api.upload - DEBUG - Session ID retrieved from request cookies: 655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:42,426 - api.upload - DEBUG - Directory created for session ID 655c239bb70952c55e7af04ef8287d8d at /Users/musicroom/Desktop/python/just/uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:42,426 - api.upload - DEBUG - Starting file upload
+2026-05-12 08:50:43,430 - api.upload - DEBUG - Received file 111252.jpg
+2026-05-12 08:50:43,436 - api.upload - DEBUG - File upload complete
+2026-05-12 08:50:46,652 - api.getallmeta - DEBUG - Waiting 5s before getting cookie
+2026-05-12 08:50:51,653 - api.getallmeta - DEBUG - Full path: uploaded_files/655c239bb70952c55e7af04ef8287d8d
+2026-05-12 08:50:51,653 - api.getallmeta - DEBUG - Waiting 5s to ensure all files are available
+2026-05-12 08:50:56,765 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105312.jpg
+2026-05-12 08:50:56,824 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105971.jpg
+2026-05-12 08:50:56,881 - api.getallmeta - DEBUG - Metadata retrieved successfully for 106061.jpg
+2026-05-12 08:50:56,938 - api.getallmeta - DEBUG - Metadata retrieved successfully for 106633.jpg
+2026-05-12 08:50:56,995 - api.getallmeta - DEBUG - Metadata retrieved successfully for 107045.jpg
+2026-05-12 08:50:57,051 - api.getallmeta - DEBUG - Metadata retrieved successfully for 107712.jpg
+2026-05-12 08:50:57,108 - api.getallmeta - DEBUG - Metadata retrieved successfully for 109245.jpg
+2026-05-12 08:50:57,164 - api.getallmeta - DEBUG - Metadata retrieved successfully for 110797.jpg
+2026-05-12 08:50:57,221 - api.getallmeta - DEBUG - Metadata retrieved successfully for 111111.jpg
+2026-05-12 08:50:57,278 - api.getallmeta - DEBUG - Metadata retrieved successfully for 111248.jpg
+2026-05-12 08:50:57,335 - api.getallmeta - DEBUG - Metadata retrieved successfully for 111252.jpg
+2026-05-12 09:16:53,810 - api.upload - DEBUG - Session ID retrieved from request cookies: 1d9720f3915d8bcc3ba6808cd7340fbc
+2026-05-12 09:16:53,811 - api.upload - DEBUG - Directory created for session ID 1d9720f3915d8bcc3ba6808cd7340fbc at /Users/musicroom/Desktop/python/just/uploaded_files/1d9720f3915d8bcc3ba6808cd7340fbc
+2026-05-12 09:16:53,811 - api.upload - DEBUG - Starting file upload
+2026-05-12 09:16:54,816 - api.upload - DEBUG - Received file 106633.jpg
+2026-05-12 09:16:54,825 - api.upload - DEBUG - File upload complete
+2026-05-12 09:16:54,857 - api.upload - DEBUG - Session ID retrieved from request cookies: 1d9720f3915d8bcc3ba6808cd7340fbc
+2026-05-12 09:16:54,857 - api.upload - DEBUG - Directory created for session ID 1d9720f3915d8bcc3ba6808cd7340fbc at /Users/musicroom/Desktop/python/just/uploaded_files/1d9720f3915d8bcc3ba6808cd7340fbc
+2026-05-12 09:16:54,857 - api.upload - DEBUG - Starting file upload
+2026-05-12 09:16:55,860 - api.upload - DEBUG - Received file 107045.jpg
+2026-05-12 09:16:55,865 - api.upload - DEBUG - File upload complete
+2026-05-12 09:16:55,899 - api.upload - DEBUG - Session ID retrieved from request cookies: 1d9720f3915d8bcc3ba6808cd7340fbc
+2026-05-12 09:16:55,899 - api.upload - DEBUG - Directory created for session ID 1d9720f3915d8bcc3ba6808cd7340fbc at /Users/musicroom/Desktop/python/just/uploaded_files/1d9720f3915d8bcc3ba6808cd7340fbc
+2026-05-12 09:16:55,899 - api.upload - DEBUG - Starting file upload
+2026-05-12 09:16:56,905 - api.upload - DEBUG - Received file 107712.jpg
+2026-05-12 09:16:56,910 - api.upload - DEBUG - File upload complete
+2026-05-12 09:16:56,945 - api.upload - DEBUG - Session ID retrieved from request cookies: 1d9720f3915d8bcc3ba6808cd7340fbc
+2026-05-12 09:16:56,945 - api.upload - DEBUG - Directory created for session ID 1d9720f3915d8bcc3ba6808cd7340fbc at /Users/musicroom/Desktop/python/just/uploaded_files/1d9720f3915d8bcc3ba6808cd7340fbc
+2026-05-12 09:16:56,945 - api.upload - DEBUG - Starting file upload
+2026-05-12 09:16:57,952 - api.upload - DEBUG - Received file 109245.jpg
+2026-05-12 09:16:57,960 - api.upload - DEBUG - File upload complete
+2026-05-12 09:28:52,071 - api.upload - DEBUG - Session ID retrieved from request cookies: 16d57b6ab0c2ab702d18643347781fae
+2026-05-12 09:28:52,072 - api.upload - DEBUG - Directory created for session ID 16d57b6ab0c2ab702d18643347781fae at /Users/musicroom/Desktop/python/just/uploaded_files/16d57b6ab0c2ab702d18643347781fae
+2026-05-12 09:28:52,072 - api.upload - DEBUG - Starting file upload
+2026-05-12 09:28:53,078 - api.upload - DEBUG - Received file 105110.jpg
+2026-05-12 09:28:53,085 - api.upload - DEBUG - File upload complete
+2026-05-12 09:28:53,126 - api.upload - DEBUG - Session ID retrieved from request cookies: 16d57b6ab0c2ab702d18643347781fae
+2026-05-12 09:28:53,126 - api.upload - DEBUG - Directory created for session ID 16d57b6ab0c2ab702d18643347781fae at /Users/musicroom/Desktop/python/just/uploaded_files/16d57b6ab0c2ab702d18643347781fae
+2026-05-12 09:28:53,126 - api.upload - DEBUG - Starting file upload
+2026-05-12 09:28:54,131 - api.upload - DEBUG - Received file 105312.jpg
+2026-05-12 09:28:54,137 - api.upload - DEBUG - File upload complete
+2026-05-12 09:28:54,164 - api.upload - DEBUG - Session ID retrieved from request cookies: 16d57b6ab0c2ab702d18643347781fae
+2026-05-12 09:28:54,164 - api.upload - DEBUG - Directory created for session ID 16d57b6ab0c2ab702d18643347781fae at /Users/musicroom/Desktop/python/just/uploaded_files/16d57b6ab0c2ab702d18643347781fae
+2026-05-12 09:28:54,164 - api.upload - DEBUG - Starting file upload
+2026-05-12 09:28:55,170 - api.upload - DEBUG - Received file 105971.jpg
+2026-05-12 09:28:55,179 - api.upload - DEBUG - File upload complete
+2026-05-12 09:28:55,207 - api.upload - DEBUG - Session ID retrieved from request cookies: 16d57b6ab0c2ab702d18643347781fae
+2026-05-12 09:28:55,208 - api.upload - DEBUG - Directory created for session ID 16d57b6ab0c2ab702d18643347781fae at /Users/musicroom/Desktop/python/just/uploaded_files/16d57b6ab0c2ab702d18643347781fae
+2026-05-12 09:28:55,208 - api.upload - DEBUG - Starting file upload
+2026-05-12 09:28:56,214 - api.upload - DEBUG - Received file 106061.jpg
+2026-05-12 09:28:56,220 - api.upload - DEBUG - File upload complete
+2026-05-12 09:28:56,247 - api.upload - DEBUG - Session ID retrieved from request cookies: 16d57b6ab0c2ab702d18643347781fae
+2026-05-12 09:28:56,247 - api.upload - DEBUG - Directory created for session ID 16d57b6ab0c2ab702d18643347781fae at /Users/musicroom/Desktop/python/just/uploaded_files/16d57b6ab0c2ab702d18643347781fae
+2026-05-12 09:28:56,247 - api.upload - DEBUG - Starting file upload
+2026-05-12 09:28:57,253 - api.upload - DEBUG - Received file 106633.jpg
+2026-05-12 09:28:57,260 - api.upload - DEBUG - File upload complete
+2026-05-12 09:29:01,440 - api.getallmeta - DEBUG - Waiting 5s before getting cookie
+2026-05-12 09:29:06,445 - api.getallmeta - DEBUG - Full path: uploaded_files/16d57b6ab0c2ab702d18643347781fae
+2026-05-12 09:29:06,445 - api.getallmeta - DEBUG - Waiting 5s to ensure all files are available
+2026-05-12 09:29:11,576 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105110.jpg
+2026-05-12 09:29:11,634 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105312.jpg
+2026-05-12 09:29:11,691 - api.getallmeta - DEBUG - Metadata retrieved successfully for 105971.jpg
+2026-05-12 09:29:11,750 - api.getallmeta - DEBUG - Metadata retrieved successfully for 106061.jpg
+2026-05-12 09:29:11,807 - api.getallmeta - DEBUG - Metadata retrieved successfully for 106633.jpg

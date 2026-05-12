@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Primary meta -->
-    <title>JustTheMeta — Free EXIF, HEIC & RAW Metadata Viewer</title>
+    <title>Free Online EXIF Viewer — Read HEIC, RAW & JPEG Metadata | JustTheMeta</title>
     <meta name="description" content="Free online metadata viewer. Drop any image — JPEG, HEIC, RAW, TIFF, PSD — to read EXIF, IPTC, XMP and GPS data instantly. Nothing stored, nothing shared.">
     <meta name="keywords" content="EXIF viewer, metadata viewer, HEIC EXIF, iPhone metadata, IPTC reader, XMP reader, GPS from photo, RAW metadata, DNG, CR2, NEF, SR2, free EXIF tool, online EXIF reader, photo metadata extractor">
     <meta name="author" content="SuperStock">
@@ -80,6 +80,56 @@
       },
       "isAccessibleForFree": true,
       "inLanguage": "en"
+    }
+    </script>
+
+    <!-- FAQ Structured data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is EXIF data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EXIF (Exchangeable Image File Format) is metadata embedded inside a photo by the camera or phone that took it. It includes the camera model, lens, shutter speed, aperture, ISO, date and time the photo was taken, and often GPS coordinates if location services were enabled."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does JustTheMeta support HEIC files from iPhone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. JustTheMeta reads HEIC files directly, including all EXIF, IPTC, XMP, and GPS data that iPhones embed. No conversion needed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my uploaded files stored on your servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Files are parsed in a temporary session and discarded. Nothing is retained, logged, or shared. JustTheMeta is built for privacy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I see GPS coordinates from a photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. If the photo's EXIF data contains GPS coordinates (latitude and longitude), JustTheMeta will display them. Most modern phones embed GPS by default unless location access is disabled for the camera."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What file formats does JustTheMeta support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "JPEG, HEIC, PNG, TIFF, GIF, BMP, PSD, and RAW formats including DNG, CR2, NEF, and SR2. If a file has embedded metadata, JustTheMeta will extract it."
+          }
+        }
+      ]
     }
     </script>
 
@@ -283,6 +333,15 @@
             font-style: italic;
             font-weight: 300;
             color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+            margin: 20px 0 0;
         }
 
         .hero-blurb {
@@ -685,6 +744,94 @@
         .info-body a:hover {
             color: var(--accent);
             border-color: var(--accent);
+        }
+
+        /* ============ FAQ SECTION ============ */
+        .faq-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 40px 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .faq-kicker {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .faq-kicker::after {
+            content: "";
+            display: block;
+            height: 1px;
+            background: var(--accent);
+            flex: 0 0 64px;
+        }
+
+        .faq-title {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-weight: 400;
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1.1;
+            color: var(--ink);
+            margin: 0 0 32px;
+            letter-spacing: -0.01em;
+            font-variation-settings: "opsz" 144;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--rule-soft);
+            padding: 20px 0;
+        }
+        .faq-item:first-of-type {
+            border-top: 1px solid var(--rule-soft);
+        }
+
+        .faq-q {
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--ink);
+            list-style: none;
+            position: relative;
+            padding-right: 32px;
+            transition: color 0.2s ease;
+        }
+        .faq-q::-webkit-details-marker { display: none; }
+        .faq-q:hover { color: var(--accent); }
+
+        .faq-q::after {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Geist', sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--accent);
+            transition: transform 0.25s ease;
+            line-height: 1;
+        }
+        .faq-item[open] .faq-q::after {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .faq-a {
+            margin: 16px 0 0;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--ink-soft);
         }
 
         /* ============ FOOTER ============ */
@@ -1104,6 +1251,7 @@
             .action-row { grid-template-columns: 1fr; }
             .info-strip { padding: 56px 20px 32px; }
             .info-grid { grid-template-columns: 1fr; gap: 32px; }
+            .faq-section { padding: 32px 20px 56px; }
             .footer { padding: 0 20px 32px; }
             .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
             .modal-card { padding: 36px 24px; }
@@ -1142,6 +1290,7 @@
 <section class="hero">
     <div class="hero-kicker">Free Tool · EXIF · IPTC · XMP · GPS</div>
     <h1 class="hero-title">Just <em>the</em><br>meta.</h1>
+    <p class="hero-subtitle">A free online EXIF, IPTC, XMP &amp; GPS metadata viewer</p>
     <p class="hero-blurb">
         Upload your image(s) — JPEG, HEIC, PNG, RAW, the works — and we'll pull every scrap of metadata hiding inside.
         XMP, JFIF, ICC, IPTC, EXIF, Composite, and GPS coordinates if they're there. Nothing's retained. Nothing's stored.
@@ -1217,9 +1366,39 @@
     </div>
 </section>
 
+<section class="faq-section">
+    <div class="faq-kicker">Frequently Asked</div>
+    <h2 class="faq-title">Common questions.</h2>
+
+    <details class="faq-item">
+        <summary class="faq-q">What is EXIF data?</summary>
+        <p class="faq-a">EXIF (Exchangeable Image File Format) is metadata embedded inside a photo by the camera or phone that took it. It includes the camera model, lens, shutter speed, aperture, ISO, date and time the photo was taken, and often GPS coordinates if location services were enabled.</p>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-q">Does JustTheMeta support HEIC files from iPhone?</summary>
+        <p class="faq-a">Yes. JustTheMeta reads HEIC files directly, including all EXIF, IPTC, XMP, and GPS data that iPhones embed. No conversion needed.</p>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-q">Are my uploaded files stored on your servers?</summary>
+        <p class="faq-a">No. Files are parsed in a temporary session and discarded. Nothing is retained, logged, or shared. JustTheMeta is built for privacy.</p>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-q">Can I see GPS coordinates from a photo?</summary>
+        <p class="faq-a">Yes. If the photo's EXIF data contains GPS coordinates (latitude and longitude), JustTheMeta will display them. Most modern phones embed GPS by default unless location access is disabled for the camera.</p>
+    </details>
+
+    <details class="faq-item">
+        <summary class="faq-q">What file formats does JustTheMeta support?</summary>
+        <p class="faq-a">JPEG, HEIC, PNG, TIFF, GIF, BMP, PSD, and RAW formats including DNG, CR2, NEF, and SR2. If a file has embedded metadata, JustTheMeta will extract it.</p>
+    </details>
+</section>
+
 <footer class="footer">
     <div class="footer-inner">
-        <span>© 2026 SuperStock · JustTheMeta v3.5</span>
+        <span>© 2026 SuperStock · JustTheMeta v3.6</span>
         <span class="footer-tag">
             Got feedback? <a href="mailto:info@justthemeta.com?subject=JustTheMeta%20Feedback">Say hello</a>.
         </span>

@@ -5,7 +5,7 @@ import platform
 import secrets
 import logging
 from fastapi import FastAPI, Request, UploadFile, File
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import time
@@ -62,6 +62,14 @@ def form_post(request: Request):
     logging.debug(f"Cookie exists before sending response: {cookie_value is not None}")
 
     return response
+
+@api.get("/robots.txt", include_in_schema=False)
+def robots():
+    return FileResponse("static/robots.txt", media_type="text/plain")
+
+@api.get("/sitemap.xml", include_in_schema=False)
+def sitemap():
+    return FileResponse("static/sitemap.xml", media_type="application/xml")
 
 @api.get("/check-cookie")
 def check_cookie(request: Request):
@@ -148,4 +156,3 @@ async def index(request: Request, file: UploadFile = File(...)):
 if __name__ == '__main__':
     import uvicorn
     uvicorn.run("just:api", host="0.0.0.0", port=8000)
-

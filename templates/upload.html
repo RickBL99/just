@@ -2,12 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Just The Meta is a free EXIF, IPTC, XMP, and metadata viewer tool. Drag and drop your images (JPEG, HEIC, RAW, and more) to see the data hiding inside.">
-    <meta name="keywords" content="exif, iptc, xmp, heic, iphone, metadata, viewer, tool, free, drag and drop, images">
-    <meta name="author" content="Just The Meta">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JustTheMeta — Read EXIF, IPTC, XMP & GPS from your images</title>
-    <link rel="shortcut icon" type="image/jpg" href="/static/favicon.ico"/>
+
+    <!-- Primary meta -->
+    <title>JustTheMeta — Free EXIF, HEIC & RAW Metadata Viewer</title>
+    <meta name="description" content="Free online metadata viewer. Drop any image — JPEG, HEIC, RAW, TIFF, PSD — to read EXIF, IPTC, XMP and GPS data instantly. Nothing stored, nothing shared.">
+    <meta name="keywords" content="EXIF viewer, metadata viewer, HEIC EXIF, iPhone metadata, IPTC reader, XMP reader, GPS from photo, RAW metadata, DNG, CR2, NEF, SR2, free EXIF tool, online EXIF reader, photo metadata extractor">
+    <meta name="author" content="SuperStock">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#F4F1EA">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="https://justthemeta.com/">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link rel="manifest" href="/static/site.webmanifest">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://justthemeta.com/">
+    <meta property="og:title" content="JustTheMeta — Free EXIF, HEIC & RAW Metadata Viewer">
+    <meta property="og:description" content="Drop any image — JPEG, HEIC, RAW, TIFF, PSD — to read EXIF, IPTC, XMP and GPS data instantly. By SuperStock.">
+    <meta property="og:image" content="https://justthemeta.com/static/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="JustTheMeta — a free metadata viewer by SuperStock">
+    <meta property="og:site_name" content="JustTheMeta">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JustTheMeta — Free EXIF, HEIC & RAW Metadata Viewer">
+    <meta name="twitter:description" content="Drop any image — JPEG, HEIC, RAW, TIFF, PSD — read EXIF, IPTC, XMP and GPS instantly. By SuperStock.">
+    <meta name="twitter:image" content="https://justthemeta.com/static/og-image.png">
+    <meta name="twitter:image:alt" content="JustTheMeta logo and tagline">
+
+    <!-- Structured data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "JustTheMeta",
+      "alternateName": "Just The Meta",
+      "url": "https://justthemeta.com/",
+      "description": "Free online metadata viewer for EXIF, IPTC, XMP, HEIC, RAW images and GPS data.",
+      "applicationCategory": "MultimediaApplication",
+      "applicationSubCategory": "Image Metadata Viewer",
+      "operatingSystem": "Any modern browser",
+      "browserRequirements": "Requires JavaScript",
+      "featureList": [
+        "EXIF data extraction",
+        "IPTC metadata reading",
+        "XMP packet parsing",
+        "ICC and JFIF data display",
+        "GPS coordinate display with interactive map",
+        "HEIC support for iPhone photos",
+        "RAW file support (DNG, CR2, NEF, SR2)",
+        "PSD and TIFF support",
+        "Batch upload (up to 30 files)",
+        "XLSX and PDF export"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "SuperStock",
+        "url": "https://www.superstock.com",
+        "foundingDate": "1971",
+        "description": "Photographer-owned stock photography agency since 1971."
+      },
+      "isAccessibleForFree": true,
+      "inLanguage": "en"
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,6 +177,16 @@
             height: 7px;
             background: var(--accent);
             border-radius: 50%;
+            animation: brandPulse 2.4s ease-in-out infinite;
+        }
+
+        @keyframes brandPulse {
+            0%, 100% { opacity: 1; }
+            50%      { opacity: 0.3; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .brand-dot { animation: none; }
         }
 
         .brand-sep {
@@ -853,6 +937,51 @@
         }
         .modal-cta:hover .cta-arrow { transform: translateX(4px); }
 
+        /* ============ POOF MODAL ============ */
+        .modal-card-poof {
+            max-width: 400px;
+            padding: 56px 40px 48px;
+            text-align: center;
+        }
+        .modal-card-poof .modal-kicker {
+            justify-content: center;
+        }
+        .modal-card-poof .modal-kicker::after { display: none; }
+
+        .poof-title {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: clamp(56px, 9vw, 72px);
+            font-weight: 400;
+            line-height: 1;
+            color: var(--accent);
+            margin: 0 0 16px;
+            letter-spacing: -0.02em;
+            font-variation-settings: "opsz" 144;
+        }
+
+        .poof-sub {
+            font-family: 'Fraunces', serif;
+            font-style: italic;
+            font-size: 17px;
+            line-height: 1.4;
+            color: var(--ink-soft);
+            margin: 0;
+            font-variation-settings: "opsz" 144;
+        }
+
+        /* Pop-in for the Poof! word when the modal opens */
+        .modal-backdrop-custom.show .poof-title {
+            animation: poofIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+        }
+        @keyframes poofIn {
+            0%   { transform: scale(0.45); opacity: 0; }
+            100% { transform: scale(1);    opacity: 1; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .modal-backdrop-custom.show .poof-title { animation: none; }
+        }
+
         /* ============ RESPONSIVE ============ */
         @media (max-width: 768px) {
             .topbar-inner { padding: 14px 20px; gap: 12px; }
@@ -901,7 +1030,7 @@
     <div class="hero-kicker">Free Tool · EXIF · IPTC · XMP · GPS</div>
     <h1 class="hero-title">Just <em>the</em><br>meta.</h1>
     <p class="hero-blurb">
-        Drop in an image — JPEG, HEIC, PNG, RAW, the works — and we'll pull every scrap of metadata hiding inside.
+        Drop in your images (a reasonable amount, dude) — JPEG, HEIC, PNG, RAW, the works — and we'll pull every scrap of metadata hiding inside.
         XMP, JFIF, ICC, IPTC, EXIF, Composite, and GPS coordinates if they're there. Nothing's retained. Nothing's stored.
     </p>
 </section>
@@ -949,7 +1078,7 @@
         <button type="button" id="get-meta-button" class="btn" disabled onclick="submitForm('/api/getallmeta')">
             Show me the meta <span class="arrow">→</span>
         </button>
-        <button type="button" id="start-again" class="btn btn-ghost" onclick="window.location.href='/'">
+        <button type="button" id="start-again" class="btn btn-ghost" onclick="clearAndRestart()">
             Clear &amp; start again
         </button>
     </div>
@@ -977,7 +1106,7 @@
 
 <footer class="footer">
     <div class="footer-inner">
-        <span>© 2026 SuperStock · JustTheMeta v3.3</span>
+        <span>© 2026 SuperStock · JustTheMeta v3.0</span>
         <span class="footer-tag">
             Got feedback? <a href="mailto:info@justthemeta.com?subject=JustTheMeta%20Feedback">Say hello</a>.
         </span>
@@ -1026,6 +1155,15 @@
         <a href="https://superstock.com" class="modal-cta" target="_blank" rel="noopener">
             Visit superstock.com <span class="cta-arrow">→</span>
         </a>
+    </div>
+</div>
+
+<!-- Poof modal (cleared session) -->
+<div class="modal-backdrop-custom" id="poof-modal" aria-hidden="true">
+    <div class="modal-card modal-card-poof">
+        <div class="modal-kicker">Session · Cleared</div>
+        <h3 class="poof-title">Poof!</h3>
+        <p class="poof-sub">Files gone. Like they were never here.</p>
     </div>
 </div>
 
@@ -1270,6 +1408,17 @@
 
     function openModal(id) { document.getElementById(id).classList.add('show'); }
     function closeModal(id) { document.getElementById(id).classList.remove('show'); }
+
+    // Cheeky session clear: pop the Poof modal, then navigate.
+    var sessionClearing = false;
+    function clearAndRestart() {
+        if (sessionClearing) return;
+        sessionClearing = true;
+        openModal('poof-modal');
+        setTimeout(function () {
+            window.location.href = '/';
+        }, 1500);
+    }
 
     // About modal trigger
     document.getElementById('open-about-btn').addEventListener('click', function () {

@@ -757,3 +757,18 @@
 2026-05-11 22:39:48,709 - api.getallmeta - DEBUG - Full path: uploaded_files/3611e9efcdc9517573c86ab63f3e1c61
 2026-05-11 22:39:48,710 - api.getallmeta - DEBUG - Waiting 5s to ensure all files are available
 2026-05-11 22:39:53,833 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_0705.JPG
+2026-05-11 23:05:57,173 - api.upload - DEBUG - Session ID retrieved from request cookies: 01157a4e6474a8ca674aceb1f6d08d9a
+2026-05-11 23:05:57,174 - api.upload - DEBUG - Directory created for session ID 01157a4e6474a8ca674aceb1f6d08d9a at /Applications/just/uploaded_files/01157a4e6474a8ca674aceb1f6d08d9a
+2026-05-11 23:05:57,174 - api.upload - DEBUG - Starting file upload
+2026-05-11 23:05:58,181 - api.upload - DEBUG - Received file IMG_0577.jpeg
+2026-05-11 23:05:58,186 - api.upload - DEBUG - File upload complete
+2026-05-11 23:05:58,206 - api.upload - DEBUG - Session ID retrieved from request cookies: 01157a4e6474a8ca674aceb1f6d08d9a
+2026-05-11 23:05:58,207 - api.upload - DEBUG - Directory created for session ID 01157a4e6474a8ca674aceb1f6d08d9a at /Applications/just/uploaded_files/01157a4e6474a8ca674aceb1f6d08d9a
+2026-05-11 23:05:58,207 - api.upload - DEBUG - Starting file upload
+2026-05-11 23:05:59,211 - api.upload - DEBUG - Received file IMG_3078.jpeg
+2026-05-11 23:05:59,212 - api.upload - DEBUG - File upload complete
+2026-05-11 23:06:01,752 - api.getallmeta - DEBUG - Waiting 5s before getting cookie
+2026-05-11 23:06:06,757 - api.getallmeta - DEBUG - Full path: uploaded_files/01157a4e6474a8ca674aceb1f6d08d9a
+2026-05-11 23:06:06,758 - api.getallmeta - DEBUG - Waiting 5s to ensure all files are available
+2026-05-11 23:06:11,905 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_0577.jpeg
+2026-05-11 23:06:11,981 - api.getallmeta - DEBUG - Metadata retrieved successfully for IMG_3078.jpeg

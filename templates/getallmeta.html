@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#F4F1EA">
     <title>Metadata — JustTheMeta</title>
     <link rel="shortcut icon" type="image/jpg" href="/favicon.ico"/>
 
@@ -105,6 +107,16 @@
             height: 7px;
             background: var(--accent);
             border-radius: 50%;
+            animation: brandPulse 2.4s ease-in-out infinite;
+        }
+
+        @keyframes brandPulse {
+            0%, 100% { opacity: 1; }
+            50%      { opacity: 0.3; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .brand-dot { animation: none; }
         }
 
         .back-link {
